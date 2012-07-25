@@ -16,7 +16,7 @@ tests = [
     ]
   ]
 
-prop_p a = readAccountFromString (showPickled [] a) == Just a
+prop_p a = (readXmlString (showXmlString a) :: Maybe Account) == Just a
 
 instance Arbitrary Account where
   arbitrary = do

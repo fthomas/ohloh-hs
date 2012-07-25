@@ -1,12 +1,12 @@
 module Account (
   Account(..),
-  readAccountFromString
+  readXmlString,
+  showXmlString
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Text.XML.HXT.Core
-
+import Common
 import KudoScore
 
 data Account = Account {
@@ -30,24 +30,13 @@ data Account = Account {
 instance XmlPickler Account where
   xpickle = xpAccount
 
+instance ReadXmlString Account
+instance ShowXmlString Account
+
 xpAccount :: PU Account
 xpAccount =
   xpElem "account" $
-    xpWrap (\(id, name) -> Account id name,
-            \a -> (Account.id a, name a)) $
+    xpWrap (uncurry Account,
+            \(Account i n) -> (i, n)) $
     xpPair (xpElem "id" xpText0)
            (xpElem "name" xpText0)
-
-
-
--- move to common
-unpickleAccount :: XmlTree -> Maybe Account
-unpickleAccount = unpickleDoc xpAccount
-
-readAccountFromString :: String -> Maybe Account
-readAccountFromString xml =
-  case runLA xread xml of
-    [] -> Nothing
-    (x:xs) -> unpickleDoc xpAccount x
-
--- class ReadXmlString
