@@ -1,0 +1,33 @@
+name:               ohloh-hs
+version:            0.0.0
+synopsis:           none yet
+description:        none yet
+homepage:           https://github.com/fthomas/ohloh-hs
+license:            BSD3
+license-file:       LICENSE
+author:             Frank S. Thomas <frank@timepit.eu>
+maintainer:         Frank S. Thomas <frank@timepit.eu>
+build-type:         Simple
+cabal-version:      >= 1.9.2
+
+source-repository head
+  type:             git
+  location:         https://github.com/fthomas/ohloh-hs
+
+library
+  exposed-modules:  Account
+                    KudoScore
+                    Project
+  hs-source-dirs:   src
+  build-depends:    base >= 4 && < 5,
+                    hxt
+
+test-suite tests
+  type:             exitcode-stdio-1.0     
+  hs-source-dirs:   src, tests
+  main-is:          Main.hs
+  build-depends:    base >= 4 && < 5,
+                    hxt,
+                    test-framework,
+                    test-framework-quickcheck2,
+                    QuickCheck
