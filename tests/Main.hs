@@ -1,33 +1,48 @@
+import Test.QuickCheck
 import Test.Framework (defaultMain, testGroup)
 import Test.Framework.Providers.QuickCheck2 (testProperty)
 
-import Test.QuickCheck
-import Test.QuickCheck.Arbitrary
-
 import Account
-
-import Text.XML.HXT.Core -- ?
+import KudoScore
 
 main :: IO ()
 main = defaultMain tests
 
 tests = [
     testGroup "Account" [
-      testProperty "aaa" prop_p
+      testProperty "showRead" prop_showReadAccount
+    ],
+    testGroup "KudoScore" [
+      testProperty "showRead" prop_showReadKudoScore
     ]
   ]
 
-prop_p a = (readXmlString (showXmlString a) :: Maybe Account) == Just a
+prop_showReadAccount x
+  = ((readXmlString . showXmlString) x :: Maybe Account) == Just x
 
--- http://www.w3.org/TR/REC-xml/#charsets
-legalXmlChars :: String
-legalXmlChars = ['\x9', '\xA', '\xD']
-             ++ ['\x20' .. '\xD7FF']
-             ++ ['\xE000' .. '\xFFFD']
-             -- ++ ['\x10000' .. '\x10FFFF']
+prop_showReadKudoScore x
+  = ((readXmlString . showXmlString) x :: Maybe KudoScore) == Just x
+
+
+-- | List of legal XML characters, excluding '\xD' : ['\x10000' .. '\x10FFFF'].
+--   See http://www.w3.org/TR/REC-xml/#charsets
+legalXmlChars :: [Char]
+legalXmlChars = ['\x9', '\xA'] ++ ['\x20' .. '\xD7FF'] ++ ['\xE000' .. '\xFFFD']
+
+xmlTextGen :: Gen String
+xmlTextGen = (listOf . elements) legalXmlChars
 
 instance Arbitrary Account where
   arbitrary = do
-    id <- listOf $ elements legalXmlChars
-    name <- listOf $ elements legalXmlChars
-    return (Account id name)
+    i <- xmlTextGen
+    n <- xmlTextGen
+    return (Account i n)
+
+instance Arbitrary KudoScore where
+  arbitrary = do
+    ca <- xmlTextGen
+    kr <- arbitrary
+    p  <- arbitrary
+    mp <- arbitrary
+    pd <- arbitrary
+    return (KudoScore ca kr p mp pd)
