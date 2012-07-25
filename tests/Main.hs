@@ -27,7 +27,9 @@ prop_showReadKudoScore x
 -- | List of legal XML characters, excluding '\xD' : ['\x10000' .. '\x10FFFF'].
 --   See http://www.w3.org/TR/REC-xml/#charsets
 legalXmlChars :: [Char]
-legalXmlChars = ['\x9', '\xA'] ++ ['\x20' .. '\xD7FF'] ++ ['\xE000' .. '\xFFFD']
+legalXmlChars = ['\x9', '\xA']
+             ++ ['\x20' .. '\xD7FF']
+             ++ ['\xE000' .. '\xFFFD']
 
 xmlTextGen :: Gen String
 xmlTextGen = (listOf . elements) legalXmlChars
