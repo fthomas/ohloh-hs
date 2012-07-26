@@ -17,6 +17,7 @@ source-repository head
 
 library
   exposed-modules:  Account
+                    Analysis
                     KudoScore
                     Project
   hs-source-dirs:   src
