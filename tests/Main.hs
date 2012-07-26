@@ -33,7 +33,7 @@ legalXmlChars = ['\x9', '\xA', '\xD']
 
 legalXmlCharsSubset :: [Char]
 legalXmlCharsSubset = ['\x9', '\xA']
-                   ++ ['\x20' .. '\x02FF']
+                   ++ ['\x20' .. '\xFF']
 
 xmlTextGen :: Gen String
 xmlTextGen = (listOf . elements) legalXmlCharsSubset
