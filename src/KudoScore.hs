@@ -26,7 +26,8 @@ xpKudoScore :: PU KudoScore
 xpKudoScore =
   xpElem "kudo_score" $
     xpWrap (uncurry5 KudoScore,
-            \(KudoScore ca kr p mp pd) -> (ca, kr, p, mp, pd)) $
+            \(KudoScore ca  kr  p  mp  pd) ->
+                       (ca, kr, p, mp, pd)) $
     xp5Tuple (xpElem "created_at" xpText0)
              (xpElem "kudo_rank" xpInt)
              (xpElem "position" xpInt)

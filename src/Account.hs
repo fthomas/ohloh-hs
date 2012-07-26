@@ -11,8 +11,7 @@ import KudoScore
 
 data Account = Account {
   id :: String,
-  name :: String
-{-,
+  name :: String,
   createdAt :: String,
   updatedAt :: String,
   homepageUrl :: String,
@@ -24,7 +23,6 @@ data Account = Account {
   latitude :: String,
   longitude :: String,
   kudoScore :: Maybe KudoScore
--}
 } deriving (Eq, Read, Show)
 
 instance XmlPickler Account where
@@ -36,7 +34,19 @@ instance ShowXmlString Account
 xpAccount :: PU Account
 xpAccount =
   xpElem "account" $
-    xpWrap (uncurry Account,
-            \(Account i n) -> (i, n)) $
-    xpPair (xpElem "id" xpText0)
-           (xpElem "name" xpText0)
+    xpWrap (uncurry13 Account,
+            \(Account i  n  ca  ua  hu  au  es  pc  l  cc  la  lo  ks) ->
+                     (i, n, ca, ua, hu, au, es, pc, l, cc, la, lo, ks)) $
+    xp13Tuple (xpElem "id" xpText0)
+              (xpElem "name" xpText0)
+              (xpElem "created_at" xpText0)
+              (xpElem "updated_at" xpText0)
+              (xpElem "homepage_url" xpText0)
+              (xpElem "avatar_url" xpText0)
+              (xpElem "email_sha1" xpText0)
+              (xpElem "posts_count" xpInt)
+              (xpElem "location" xpText0)
+              (xpElem "country_code" xpText0)
+              (xpElem "latitude" xpText0)
+              (xpElem "longitude" xpText0)
+              (xpOption (xpElem "kudo_score" xpickle))
