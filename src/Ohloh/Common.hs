@@ -1,4 +1,4 @@
-module Common where
+module Ohloh.Common where
 
 import Text.XML.HXT.Core
 

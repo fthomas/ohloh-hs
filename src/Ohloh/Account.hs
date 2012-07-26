@@ -1,4 +1,4 @@
-module Account (
+module Ohloh.Account (
   Account(..),
   readXmlString,
   showXmlString
@@ -6,22 +6,22 @@ module Account (
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Common
-import KudoScore
+import Ohloh.Common
+import Ohloh.KudoScore
 
 data Account = Account {
   id :: String,
   name :: String,
   createdAt :: String,
   updatedAt :: String,
-  homepageUrl :: String,
+  homepageUrl :: String, -- optional
   avatarUrl :: String,
   emailSha1 :: String,
   postsCount :: Int,
-  location :: String,
-  countryCode :: String,
-  latitude :: String,
-  longitude :: String,
+  location :: String, --optional
+  countryCode :: String, --optional
+  latitude :: String, --optional
+  longitude :: String, --optional
   kudoScore :: Maybe KudoScore
 } deriving (Eq, Read, Show)
 

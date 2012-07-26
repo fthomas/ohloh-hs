@@ -1,4 +1,4 @@
-module Analysis (
+module Ohloh.Analysis (
   Analysis(..),
   readXmlString,
   showXmlString
@@ -6,7 +6,7 @@ module Analysis (
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Common
+import Ohloh.Common
 
 data Analysis = Analysis {
   id :: String,

@@ -1,4 +1,4 @@
-module Project (
+module Ohloh.Project (
   Project(..),
   readXmlString,
   showXmlString
@@ -6,8 +6,8 @@ module Project (
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Analysis
-import Common
+import Ohloh.Analysis
+import Ohloh.Common
 
 data Project = Project {
   id :: String,

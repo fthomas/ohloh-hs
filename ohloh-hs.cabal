@@ -16,10 +16,11 @@ source-repository head
   location:         https://github.com/fthomas/ohloh-hs
 
 library
-  exposed-modules:  Account
-                    Analysis
-                    KudoScore
-                    Project
+  exposed-modules:  Ohloh
+                    Ohloh.Account
+                    Ohloh.Analysis
+                    Ohloh.KudoScore
+                    Ohloh.Project
   hs-source-dirs:   src
   build-depends:    base >= 4 && < 5,
                     hxt

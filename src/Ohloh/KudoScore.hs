@@ -1,4 +1,4 @@
-module KudoScore (
+module Ohloh.KudoScore (
   KudoScore(..),
   readXmlString,
   showXmlString
@@ -6,7 +6,7 @@ module KudoScore (
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Common
+import Ohloh.Common
 
 data KudoScore = KudoScore {
   createdAt :: String,
