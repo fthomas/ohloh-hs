@@ -5,6 +5,7 @@ import Test.Framework.Providers.QuickCheck2 (testProperty)
 import Account
 import Analysis
 import KudoScore
+import Project
 
 main :: IO ()
 main = defaultMain tests
@@ -18,6 +19,9 @@ tests = [
     ],
     testGroup "KudoScore" [
       testProperty "showRead" prop_showReadKudoScore
+    ],
+    testGroup "Project" [
+      testProperty "showRead" prop_showReadProject
     ]
   ]
 
@@ -29,6 +33,9 @@ prop_showReadAnalysis x =
 
 prop_showReadKudoScore x =
   ((readXmlString . showXmlString) x :: Maybe KudoScore) == Just x
+
+prop_showReadProject x =
+  ((readXmlString . showXmlString) x :: Maybe Project) == Just x
 
 
 -- | List of legal XML characters, see http://www.w3.org/TR/REC-xml/#charsets
@@ -84,3 +91,22 @@ instance Arbitrary KudoScore where
     mp <- arbitrary
     pd <- arbitrary
     return (KudoScore ca kr p mp pd)
+
+instance Arbitrary Project where
+  arbitrary = do
+    i   <- xmlTextGen
+    n   <- xmlTextGen
+    ca  <- xmlTextGen
+    ua  <- xmlTextGen
+    d   <- xmlTextGen
+    hu  <- xmlTextGen
+    du  <- xmlTextGen
+    un  <- xmlTextGen
+    mlu <- xmlTextGen
+    slu <- xmlTextGen
+    sc  <- arbitrary
+    ar  <- arbitrary
+    rc  <- arbitrary
+    ai  <- xmlTextGen
+    a   <- arbitrary
+    return (Project i n ca ua (Just d) (Just hu) (Just du) un mlu slu sc ar rc ai a)
