@@ -3,6 +3,7 @@ import Test.Framework (defaultMain, testGroup)
 import Test.Framework.Providers.QuickCheck2 (testProperty)
 
 import Account
+import Analysis
 import KudoScore
 
 main :: IO ()
@@ -12,6 +13,9 @@ tests = [
     testGroup "Account" [
       testProperty "showRead" prop_showReadAccount
     ],
+    testGroup "Analysis" [
+      testProperty "showRead" prop_showReadAnalysis
+    ],
     testGroup "KudoScore" [
       testProperty "showRead" prop_showReadKudoScore
     ]
@@ -19,6 +23,9 @@ tests = [
 
 prop_showReadAccount x =
   ((readXmlString . showXmlString) x :: Maybe Account) == Just x
+
+prop_showReadAnalysis x =
+  ((readXmlString . showXmlString) x :: Maybe Analysis) == Just x
 
 prop_showReadKudoScore x =
   ((readXmlString . showXmlString) x :: Maybe KudoScore) == Just x
@@ -54,6 +61,20 @@ instance Arbitrary Account where
     lo <- xmlTextGen
     ks <- arbitrary
     return (Account i n ca ua hu au es pc l cc la lo ks)
+
+instance Arbitrary Analysis where
+  arbitrary = do
+    i    <- xmlTextGen
+    pi   <- xmlTextGen
+    ua   <- xmlTextGen
+    la   <- xmlTextGen
+    min  <- xmlTextGen
+    max  <- xmlTextGen
+    tmcc <- arbitrary
+    tcl  <- arbitrary
+    mli  <- xmlTextGen
+    mln  <- xmlTextGen
+    return (Analysis i pi ua la min max tmcc tcl mli mln)
 
 instance Arbitrary KudoScore where
   arbitrary = do
