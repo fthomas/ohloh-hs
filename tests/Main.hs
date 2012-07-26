@@ -17,11 +17,10 @@ tests = [
     ]
   ]
 
-prop_showReadAccount x
-  = ((readXmlString . showXmlString) x :: Maybe Account) == Just x
+showReadXmlString = readXmlString . showXmlString
 
-prop_showReadKudoScore x
-  = ((readXmlString . showXmlString) x :: Maybe KudoScore) == Just x
+prop_showReadAccount x = (showReadXmlString x :: Maybe Account) == Just x
+prop_showReadKudoScore x = (showReadXmlString x :: Maybe KudoScore) == Just x
 
 
 -- | List of legal XML characters, see http://www.w3.org/TR/REC-xml/#charsets
