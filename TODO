@@ -1,4 +1,6 @@
 - retrieve responses via HTTP
 - extract data from a response
+- command-line tool for retrieving data
 - add missing data types
 - use special type for dates
+- support additional HTTP parameters
