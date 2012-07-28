@@ -10,7 +10,8 @@ module Ohloh (
   module Ohloh.Common,
   module Ohloh.KudoScore,
   module Ohloh.Project,
-  module Ohloh.Repository
+  module Ohloh.Repository,
+  module Ohloh.Response
 ) where
 
 import Ohloh.Account (Account(Account))
@@ -20,6 +21,7 @@ import Ohloh.KudoScore (KudoScore(KudoScore))
 import Ohloh.Project (Project(Project))
 import Ohloh.Project (Project(Project))
 import Ohloh.Repository (Repository(Repository), RepositoryType(..))
+import Ohloh.Response
 
 import qualified Ohloh.Account as Account
 import qualified Ohloh.Analysis as Analysis
