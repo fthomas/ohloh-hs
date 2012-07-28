@@ -21,6 +21,7 @@ library
                     Ohloh.Analysis
                     Ohloh.KudoScore
                     Ohloh.Project
+                    Ohloh.Repository
   hs-source-dirs:   src
   build-depends:    base >= 4 && < 5,
                     hxt
