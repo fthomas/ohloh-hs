@@ -21,6 +21,10 @@ uncurry5 :: (t1 -> t2 -> t3 -> t4 -> t5 -> t) -> (t1, t2, t3, t4, t5) -> t
 uncurry5 f (x1, x2, x3, x4, x5) =
          f  x1  x2  x3  x4  x5
 
+uncurry9 :: (t1 -> t2 -> t3 -> t4 -> t5 -> t6 -> t7 -> t8 -> t9 -> t) -> (t1, t2, t3, t4, t5, t6, t7, t8, t9) -> t
+uncurry9 f (x1, x2, x3, x4, x5, x6, x7, x8, x9) =
+         f  x1  x2  x3  x4  x5  x6  x7  x8  x9
+
 uncurry10 :: (t1 -> t2 -> t3 -> t4 -> t5 -> t6 -> t7 -> t8 -> t9 -> t10 -> t) -> (t1, t2, t3, t4, t5, t6, t7, t8, t9, t10) -> t
 uncurry10 f (x1, x2, x3, x4, x5, x6, x7, x8, x9, x10) =
           f  x1  x2  x3  x4  x5  x6  x7  x8  x9  x10
