@@ -7,7 +7,7 @@ class ReadXmlString a where
   readXmlString xml =
     case runLA xread xml of
       [] -> Nothing
-      (x:xs) -> unpickleDoc xpickle x
+      (x:_) -> unpickleDoc xpickle x
 
 class ShowXmlString a where
   showXmlString :: (XmlPickler a) => a -> String

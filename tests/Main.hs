@@ -64,7 +64,7 @@ instance Arbitrary Account where
     la <- xmlTextGen
     lo <- xmlTextGen
     ks <- arbitrary
-    return (Account i n ca ua hu au es pc l cc la lo ks)
+    return (Account i n ca ua (Just hu) au es pc (Just l) (Just cc) (Just la) (Just lo) ks)
 
 instance Arbitrary Analysis where
   arbitrary = do
