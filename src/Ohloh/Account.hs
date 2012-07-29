@@ -4,32 +4,37 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
+{-# LANGUAGE TemplateHaskell, TypeOperators #-}
+
 module Ohloh.Account (
-  Account(..),
-  readXmlString,
-  showXmlString
+  Account(Account)
 ) where
 
+import Control.Category
+import Data.Label
+import Prelude hiding ((.), id)
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 import Ohloh.KudoScore
 
 data Account = Account {
-  id :: String,
-  name :: String,
-  createdAt :: String,
-  updatedAt :: String,
-  homepageUrl :: Maybe String,
-  avatarUrl :: String,
-  emailSha1 :: String,
-  postsCount :: Int,
-  location :: Maybe String,
-  countryCode :: Maybe String,
-  latitude :: Maybe String,
-  longitude :: Maybe String,
-  kudoScore :: Maybe KudoScore
+  _id :: String,
+  _name :: String,
+  _createdAt :: String,
+  _updatedAt :: String,
+  _homepageUrl :: Maybe String,
+  _avatarUrl :: String,
+  _emailSha1 :: String,
+  _postsCount :: Int,
+  _location :: Maybe String,
+  _countryCode :: Maybe String,
+  _latitude :: Maybe String,
+  _longitude :: Maybe String,
+  _kudoScore :: Maybe KudoScore
 } deriving (Eq, Read, Show)
+
+mkLabels [''Account]
 
 instance XmlPickler Account where
   xpickle = xpAccount

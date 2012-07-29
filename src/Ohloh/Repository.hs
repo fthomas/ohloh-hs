@@ -4,13 +4,16 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
+{-# LANGUAGE TemplateHaskell, TypeOperators #-}
+
 module Ohloh.Repository (
-  RepositoryType(..),
-  Repository(..),
-  readXmlString,
-  showXmlString
+  Repository(Repository),
+  RepositoryType(..)
 ) where
 
+import Control.Category
+import Data.Label
+import Prelude hiding ((.), id)
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
@@ -25,16 +28,18 @@ data RepositoryType =
   deriving (Eq, Read, Show)
 
 data Repository = Repository {
-  id :: String,
-  repoType :: RepositoryType,
-  url :: String,
-  moduleName :: Maybe String,
-  username :: Maybe String,
-  password :: Maybe String,
-  loggedAt :: String,
-  commits :: Int,
-  ohlohJobStatus :: String
+  _id :: String,
+  _repoType :: RepositoryType,
+  _url :: String,
+  _moduleName :: Maybe String,
+  _username :: Maybe String,
+  _password :: Maybe String,
+  _loggedAt :: String,
+  _commits :: Int,
+  _ohlohJobStatus :: String
 } deriving (Eq, Read, Show)
+
+mkLabels [''Repository]
 
 instance XmlPickler Repository where
   xpickle = xpRepository

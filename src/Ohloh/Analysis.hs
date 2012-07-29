@@ -4,28 +4,33 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
+{-# LANGUAGE TemplateHaskell, TypeOperators #-}
+
 module Ohloh.Analysis (
-  Analysis(..),
-  readXmlString,
-  showXmlString
+  Analysis(Analysis)
 ) where
 
+import Control.Category
+import Data.Label
+import Prelude hiding ((.), id)
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 
 data Analysis = Analysis {
-  id :: String,
-  projectId :: String,
-  updatedAt :: String,
-  loggedAt :: String,
-  minMonth :: String,
-  maxMonth :: String,
-  twelveMonthContributorCount :: Int,
-  totalCodeLines :: Int,
-  mainLanguageId :: String,
-  mainLanguageName :: String
+  _id :: String,
+  _projectId :: String,
+  _updatedAt :: String,
+  _loggedAt :: String,
+  _minMonth :: String,
+  _maxMonth :: String,
+  _twelveMonthContributorCount :: Int,
+  _totalCodeLines :: Int,
+  _mainLanguageId :: String,
+  _mainLanguageName :: String
 } deriving (Eq, Read, Show)
+
+mkLabels [''Analysis]
 
 instance XmlPickler Analysis where
   xpickle = xpAnalysis

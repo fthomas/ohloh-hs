@@ -4,9 +4,12 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
+{-# OPTIONS_GHC -fno-warn-orphans #-}
+
 import Test.QuickCheck
 import Test.Framework (defaultMain, testGroup)
 import Test.Framework.Providers.QuickCheck2 (testProperty)
+import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh
 
@@ -15,38 +18,26 @@ main = defaultMain tests
 
 tests = [
     testGroup "Account" [
-      testProperty "showRead" prop_showReadAccount
+      testProperty "showReadXml" (prop_showReadXml :: Account -> Bool)
     ],
     testGroup "Analysis" [
-      testProperty "showRead" prop_showReadAnalysis
+      testProperty "showReadXml" (prop_showReadXml :: Analysis -> Bool)
     ],
     testGroup "KudoScore" [
-      testProperty "showRead" prop_showReadKudoScore
+      testProperty "showReadXml" (prop_showReadXml :: KudoScore -> Bool)
+    ],
+    testGroup "Language" [
+      testProperty "showReadXml" (prop_showReadXml :: Language -> Bool)
     ],
     testGroup "Project" [
-      testProperty "showRead" prop_showReadProject
+      testProperty "showReadXml" (prop_showReadXml :: Project -> Bool)
     ]
   ]
 
-prop_showReadAccount x =
-  ((readXmlString . showXmlString) x :: Maybe Account) == Just x
 
-prop_showReadAnalysis x =
-  ((readXmlString . showXmlString) x :: Maybe Analysis) == Just x
+prop_showReadXml :: (Eq a, XmlPickler a, ReadXmlString a, ShowXmlString a) => a -> Bool
+prop_showReadXml x = (readXmlString . showXmlString) x == Just x
 
-prop_showReadKudoScore x =
-  ((readXmlString . showXmlString) x :: Maybe KudoScore) == Just x
-
-prop_showReadProject x =
-  ((readXmlString . showXmlString) x :: Maybe Project) == Just x
-
-
--- | List of legal XML characters, see http://www.w3.org/TR/REC-xml/#charsets
-legalXmlChars :: [Char]
-legalXmlChars = ['\x9', '\xA', '\xD']
-             ++ ['\x20' .. '\xD7FF']
-             ++ ['\xE000' .. '\xFFFD']
-             ++ ['\x10000' .. '\x10FFFF']
 
 legalXmlCharsSubset :: [Char]
 legalXmlCharsSubset = ['\x9', '\xA']
@@ -94,6 +85,21 @@ instance Arbitrary KudoScore where
     mp <- arbitrary
     pd <- arbitrary
     return (KudoScore ca kr p mp pd)
+
+instance Arbitrary Language where
+  arbitrary = do
+    i  <- xmlTextGen
+    n  <- xmlTextGen
+    nn <- xmlTextGen
+    ca <- xmlTextGen
+    co <- arbitrary
+    cm <- arbitrary
+    b  <- arbitrary
+    cr <- arbitrary
+    p  <- arbitrary
+    cn <- arbitrary
+    ci <- arbitrary
+    return (Language i n nn ca co cm b cr p cn ci)
 
 instance Arbitrary Project where
   arbitrary = do

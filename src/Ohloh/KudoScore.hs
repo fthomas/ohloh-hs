@@ -4,23 +4,28 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
+{-# LANGUAGE TemplateHaskell, TypeOperators #-}
+
 module Ohloh.KudoScore (
-  KudoScore(..),
-  readXmlString,
-  showXmlString
+  KudoScore(KudoScore)
 ) where
 
+import Control.Category
+import Data.Label
+import Prelude hiding ((.), id)
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 
 data KudoScore = KudoScore {
-  createdAt :: String,
-  kudoRank :: Int,
-  position :: Int,
-  maxPosition :: Int,
-  positionDelta :: Int
+  _createdAt :: String,
+  _kudoRank :: Int,
+  _position :: Int,
+  _maxPosition :: Int,
+  _positionDelta :: Int
 } deriving (Eq, Read, Show)
+
+mkLabels [''KudoScore]
 
 instance XmlPickler KudoScore where
   xpickle = xpKudoScore
