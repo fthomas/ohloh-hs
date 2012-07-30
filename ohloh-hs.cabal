@@ -26,7 +26,6 @@ library
                     Ohloh.Response
   hs-source-dirs:   src
   build-depends:    base >= 4 && < 5,
-                    fclabels,
                     hxt
 
 test-suite tests
@@ -36,7 +35,6 @@ test-suite tests
   ghc-options:      -Wall
                     -fno-warn-name-shadowing
   build-depends:    base >= 4 && < 5,
-                    fclabels,
                     hxt,
                     test-framework,
                     test-framework-quickcheck2,

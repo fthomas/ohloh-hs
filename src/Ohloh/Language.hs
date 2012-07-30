@@ -4,34 +4,27 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-{-# LANGUAGE TemplateHaskell, TypeOperators #-}
-
 module Ohloh.Language (
-  Language(Language)
+  Language(..)
 ) where
 
-import Control.Category
-import Data.Label
-import Prelude hiding ((.), id)
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 
 data Language = Language {
-  _id :: String,
-  _name :: String,
-  _niceName :: String,
-  _category :: String,
-  _code :: Int,
-  _comments :: Int,
-  _blanks :: Int,
-  _commentRatio :: Double,
-  _projects :: Int,
-  _contributors :: Int,
-  _commits :: Int
+  langId :: String,
+  langName :: String,
+  langNiceName :: String,
+  langCategory :: String,
+  langCode :: Int,
+  langComments :: Int,
+  langBlanks :: Int,
+  langCommentRatio :: Double,
+  langProjects :: Int,
+  langContributors :: Int,
+  langCommits :: Int
 } deriving (Eq, Read, Show)
-
-mkLabels [''Language]
 
 instance XmlPickler Language where
   xpickle = xpLanguage

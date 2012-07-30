@@ -4,26 +4,21 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-{-# LANGUAGE TemplateHaskell, TypeOperators #-}
-
 module Ohloh.Response (
-  Response(Response)
+  Response(..)
 ) where
 
-import Control.Category
-import Data.Label
-import Prelude hiding ((.), id)
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 
 data Response a = Response {
-  _status :: String,
-  _error :: Maybe String,
-  _itemsReturned :: Maybe Int,
-  _itemsAvailable :: Maybe Int,
-  _firstItemPosition :: Maybe Int,
-  _result :: [a]
+  respStatus :: String,
+  respError :: Maybe String,
+  respItemsReturned :: Maybe Int,
+  respItemsAvailable :: Maybe Int,
+  respFirstItemPosition :: Maybe Int,
+  respResult :: [a]
 } deriving (Eq, Show, Read)
 
 instance XmlPickler a => XmlPickler (Response a) where

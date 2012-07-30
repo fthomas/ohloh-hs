@@ -4,39 +4,32 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-{-# LANGUAGE TemplateHaskell, TypeOperators #-}
-
 module Ohloh.Project (
-  Project(Project)
+  Project(..)
 ) where
 
-import Control.Category
-import Data.Label
-import Prelude hiding ((.), id)
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Analysis
 import Ohloh.Common
 
 data Project = Project {
-  _id :: String,
-  _name :: String,
-  _createdAt :: String,
-  _updatedAt :: String,
-  _description :: Maybe String,
-  _homepageUrl :: Maybe String,
-  _downloadUrl :: Maybe String,
-  _urlName :: String,
-  _mediumLogoUrl :: String,
-  _smallLogoUrl :: String,
-  _stackCount :: Int,
-  _averageRating :: Double,
-  _ratingCount :: Int,
-  _analysisId :: String,
-  _analysis :: Analysis
+  projId :: String,
+  projName :: String,
+  projCreatedAt :: String,
+  projUpdatedAt :: String,
+  projDescription :: Maybe String,
+  projHomepageUrl :: Maybe String,
+  projDownloadUrl :: Maybe String,
+  projUrlName :: String,
+  projMediumLogoUrl :: String,
+  projSmallLogoUrl :: String,
+  projStackCount :: Int,
+  projAverageRating :: Double,
+  projRatingCount :: Int,
+  projAnalysisId :: String,
+  projAnalysis :: Analysis
 } deriving (Eq, Read, Show)
-
-mkLabels [''Project]
 
 instance XmlPickler Project where
   xpickle = xpProject

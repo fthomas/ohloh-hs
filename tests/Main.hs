@@ -4,17 +4,20 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-{-# OPTIONS_GHC -fno-warn-orphans #-}
+{-#
+OPTIONS -fno-warn-missing-signatures
+        -fno-warn-orphans
+#-}
 
 import Test.QuickCheck
 import Test.Framework (defaultMain, testGroup)
 import Test.Framework.Providers.QuickCheck2 (testProperty)
-import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh
 
 main :: IO ()
 main = defaultMain tests
+
 
 tests = [
     testGroup "Account" [
@@ -31,17 +34,17 @@ tests = [
     ],
     testGroup "Project" [
       testProperty "showReadXml" (prop_showReadXml :: Project -> Bool)
+    ],
+    testGroup "Repository" [
+      testProperty "showReadXml" (prop_showReadXml :: Repository -> Bool)
     ]
   ]
 
 
-prop_showReadXml :: (Eq a, XmlPickler a, ReadXmlString a, ShowXmlString a) => a -> Bool
 prop_showReadXml x = (readXmlString . showXmlString) x == Just x
 
 
-legalXmlCharsSubset :: [Char]
-legalXmlCharsSubset = ['\x9', '\xA']
-                   ++ ['\x20' .. '\xFF']
+legalXmlCharsSubset = ['\x9', '\xA'] ++ ['\x20' .. '\xFF']
 
 xmlTextGen :: Gen String
 xmlTextGen = (listOf . elements) legalXmlCharsSubset
@@ -119,3 +122,25 @@ instance Arbitrary Project where
     ai  <- xmlTextGen
     a   <- arbitrary
     return (Project i n ca ua (Just d) (Just hu) (Just du) un mlu slu sc ar rc ai a)
+
+instance Arbitrary RepositoryType where
+  arbitrary =
+    elements [SvnRepository,
+              CvsRepository,
+              GitRepository,
+              HgRepository,
+              BzrRepository,
+              SvnSyncRepository]
+
+instance Arbitrary Repository where
+  arbitrary = do
+    i   <- xmlTextGen
+    rt  <- arbitrary
+    u   <- xmlTextGen
+    mn  <- xmlTextGen
+    un  <- xmlTextGen
+    pw  <- xmlTextGen
+    la  <- xmlTextGen
+    c   <- arbitrary
+    ojs <- xmlTextGen
+    return (Repository i rt u (Just mn) (Just un) (Just pw) la c ojs)
