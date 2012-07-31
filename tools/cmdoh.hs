@@ -6,16 +6,19 @@
 
 {-# LANGUAGE DeriveDataTypeable #-}
 
-module Main (
-  main
-) where
+module Main where
 
 import System.Console.CmdArgs
 
 import Ohloh
 
-data CmdOh = None
-  deriving (Show, Data, Typeable)
+data CmdOh = Read {file :: Maybe FilePath}
+           | None
+             deriving (Show, Data, Typeable)
+
+readCmd = Read {file = def}
 
 main :: IO ()
-main = print =<< cmdArgs (modes [None])
+main = do
+  x <- cmdArgs (modes [readCmd, None])
+  print x
