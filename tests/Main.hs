@@ -4,10 +4,8 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-{-#
-OPTIONS -fno-warn-missing-signatures
-        -fno-warn-orphans
-#-}
+{-# OPTIONS -fno-warn-missing-signatures
+            -fno-warn-orphans #-}
 
 import Test.QuickCheck
 import Test.Framework (defaultMain, testGroup)
