@@ -1,4 +1,4 @@
-- extract data from a response
+- tool to parse response from file and to show it
 - retrieve responses via HTTP
 - add missing data types
 - command-line tool for retrieving data

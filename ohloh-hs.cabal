@@ -28,10 +28,19 @@ library
   build-depends:    base >= 4 && < 5,
                     hxt
 
+executable cmdoh
+  main-is:          cmdoh.hs
+  hs-source-dirs:   src, tools
+  ghc-options:      -Wall
+                    -fno-warn-name-shadowing
+  build-depends:    base >= 4 && < 5,
+                    hxt,
+                    cmdargs
+
 test-suite tests
   type:             exitcode-stdio-1.0     
-  hs-source-dirs:   src, tests
   main-is:          Main.hs
+  hs-source-dirs:   src, tests
   ghc-options:      -Wall
                     -fno-warn-name-shadowing
   build-depends:    base >= 4 && < 5,
