@@ -12,7 +12,8 @@ module Ohloh (
   module Ohloh.Language,
   module Ohloh.Project,
   module Ohloh.Repository,
-  module Ohloh.Response
+  module Ohloh.Response,
+  module Ohloh.StackEntry
 ) where
 
 import Ohloh.Account
@@ -23,3 +24,4 @@ import Ohloh.Language
 import Ohloh.Project
 import Ohloh.Repository
 import Ohloh.Response
+import Ohloh.StackEntry

@@ -24,6 +24,7 @@ library
                     Ohloh.Project
                     Ohloh.Repository
                     Ohloh.Response
+                    Ohloh.StackEntry
   hs-source-dirs:   src
   build-depends:    base >= 4 && < 5,
                     hxt
