@@ -24,6 +24,9 @@ tests = [
     testGroup "Analysis" [
       testProperty "showReadXml" (prop_showReadXml :: Analysis -> Bool)
     ],
+    testGroup "Factoid" [
+      testProperty "showReadXml" (prop_showReadXml :: Factoid -> Bool)
+    ],
     testGroup "KudoScore" [
       testProperty "showReadXml" (prop_showReadXml :: KudoScore -> Bool)
     ],
@@ -77,6 +80,34 @@ instance Arbitrary Analysis where
     mli  <- xmlTextGen
     mln  <- xmlTextGen
     return (Analysis i pi ua la min max tmcc tcl mli mln)
+
+instance Arbitrary FactoidType where
+  arbitrary =
+    elements [FactoidActivityDecreasing,
+              FactoidActivityIncreasing,
+              FactoidAgeYoung,
+              FactoidAgeOld,
+              FactoidAgeVeryOld,
+              FactoidCommentsVeryLow,
+              FactoidCommentsLow,
+              FactoidCommentsHigh,
+              FactoidCommentsVeryHigh,
+              FactoidTeamSizeZero,
+              FactoidTeamSizeOne,
+              FactoidTeamSizeSmall,
+              FactoidTeamSizeLarge,
+              FactoidTeamSizeVeryLarge,
+              FactoidGplConflict]
+
+instance Arbitrary Factoid where
+  arbitrary = do
+    i  <- xmlTextGen
+    ai <- xmlTextGen
+    t  <- arbitrary
+    d  <- xmlTextGen
+    s  <- arbitrary
+    li <- xmlTextGen
+    return (Factoid i ai t d s (Just li))
 
 instance Arbitrary KudoScore where
   arbitrary = do

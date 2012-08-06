@@ -13,12 +13,15 @@ import System.Console.CmdArgs
 import Ohloh
 
 data CmdOh = Read {file :: Maybe FilePath}
-           | None
+           | Fetch
              deriving (Show, Data, Typeable)
 
-readCmd = Read {file = def}
+cmdRead = Read {file = def}
+cmdFetch = Fetch
 
 main :: IO ()
 main = do
-  x <- cmdArgs (modes [readCmd, None])
-  print x
+  args <- cmdArgs (modes [cmdRead, cmdFetch])
+  case args of
+    Read _ -> return ()
+    Fetch -> return ()
