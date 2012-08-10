@@ -4,13 +4,11 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveDataTypeable, RecordWildCards #-}
 
 module Main where
 
 import System.Console.CmdArgs
-
-import Ohloh
 
 data CmdOh = Read {file :: Maybe FilePath}
            | Fetch
@@ -21,7 +19,15 @@ cmdFetch = Fetch
 
 main :: IO ()
 main = do
-  args <- cmdArgs (modes [cmdRead, cmdFetch])
-  case args of
-    Read _ -> return ()
-    Fetch -> return ()
+  args <- cmdArgs $ modes [cmdRead, cmdFetch]
+  handleArgs args
+
+handleArgs Read{..} = do
+  contents <-
+    case file of
+      Just f  -> readFile f
+      Nothing -> getContents
+  putStrLn contents
+
+handleArgs args@Fetch{..} = do
+  print args
