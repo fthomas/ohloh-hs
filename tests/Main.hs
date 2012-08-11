@@ -41,7 +41,11 @@ tests = [
     ],
     testGroup "Repository" [
       testProperty "showReadXml" (prop_showReadXml :: Repository -> Bool)
+    ],
+    testGroup "StackEntry" [
+      testProperty "showReadXml" (prop_showReadXml :: StackEntry -> Bool)
     ]
+
   ]
 
 
@@ -184,3 +188,12 @@ instance Arbitrary Repository where
     c   <- arbitrary
     ojs <- xmlTextGen
     return (Repository i rt u (Just mn) (Just un) (Just pw) la c ojs)
+
+instance Arbitrary StackEntry where
+  arbitrary = do
+    i  <- xmlTextGen
+    ca <- xmlTextGen
+    si <- xmlTextGen
+    pi <- xmlTextGen
+    p  <- arbitrary
+    return (StackEntry i ca si pi (Just p))
