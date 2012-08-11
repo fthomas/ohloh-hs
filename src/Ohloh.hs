@@ -4,30 +4,16 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-module Ohloh (
-  module Ohloh.Account,
-  module Ohloh.Analysis,
-  module Ohloh.Common,
-  module Ohloh.Enlistment,
-  module Ohloh.Factoid,
-  module Ohloh.KudoScore,
-  module Ohloh.Language,
-  module Ohloh.Project,
-  module Ohloh.Repository,
-  module Ohloh.Response,
-  module Ohloh.Stack,
-  module Ohloh.StackEntry
-) where
-
-import Ohloh.Account
-import Ohloh.Analysis
-import Ohloh.Common
-import Ohloh.Enlistment
-import Ohloh.Factoid
-import Ohloh.KudoScore
-import Ohloh.Language
-import Ohloh.Project
-import Ohloh.Repository
-import Ohloh.Response
-import Ohloh.Stack
-import Ohloh.StackEntry
+module Ohloh (module X) where
+import Ohloh.Account as X
+import Ohloh.Analysis as X
+import Ohloh.Common as X
+import Ohloh.Enlistment as X
+import Ohloh.Factoid as X
+import Ohloh.KudoScore as X
+import Ohloh.Language as X
+import Ohloh.Project as X
+import Ohloh.Repository as X
+import Ohloh.Response as X
+import Ohloh.Stack as X
+import Ohloh.StackEntry as X
