@@ -24,6 +24,9 @@ tests = [
     testGroup "Analysis" [
       testProperty "showReadXml" (prop_showReadXml :: Analysis -> Bool)
     ],
+    testGroup "Enlistment" [
+      testProperty "showReadXml" (prop_showReadXml :: Enlistment -> Bool)
+    ],
     testGroup "Factoid" [
       testProperty "showReadXml" (prop_showReadXml :: Factoid -> Bool)
     ],
@@ -80,6 +83,14 @@ instance Arbitrary Analysis where
     mli  <- xmlTextGen
     mln  <- xmlTextGen
     return (Analysis i pi ua la min max tmcc tcl mli mln)
+
+instance Arbitrary Enlistment where
+  arbitrary = do
+    i  <- xmlTextGen
+    pi <- xmlTextGen
+    ri <- xmlTextGen
+    r  <- arbitrary
+    return (Enlistment i pi ri r)
 
 instance Arbitrary FactoidType where
   arbitrary =

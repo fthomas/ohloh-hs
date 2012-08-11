@@ -19,6 +19,8 @@ library
   exposed-modules:  Ohloh
                     Ohloh.Account
                     Ohloh.Analysis
+                    Ohloh.Enlistment
+                    Ohloh.Factoid
                     Ohloh.KudoScore
                     Ohloh.Language
                     Ohloh.Project

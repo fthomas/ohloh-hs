@@ -8,6 +8,7 @@ module Ohloh (
   module Ohloh.Account,
   module Ohloh.Analysis,
   module Ohloh.Common,
+  module Ohloh.Enlistment,
   module Ohloh.Factoid,
   module Ohloh.KudoScore,
   module Ohloh.Language,
@@ -20,6 +21,7 @@ module Ohloh (
 import Ohloh.Account
 import Ohloh.Analysis
 import Ohloh.Common
+import Ohloh.Enlistment
 import Ohloh.Factoid
 import Ohloh.KudoScore
 import Ohloh.Language
