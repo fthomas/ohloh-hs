@@ -5,7 +5,8 @@
 -- can be found in the LICENSE file.
 
 module Ohloh.Language (
-  Language(..)
+  Language(..),
+  xpLanguage
 ) where
 
 import Text.XML.HXT.Arrow.Pickle

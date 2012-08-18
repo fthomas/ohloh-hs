@@ -5,7 +5,8 @@
 -- can be found in the LICENSE file.
 
 module Ohloh.Response (
-  Response(..)
+  Response(..),
+  xpResponse
 ) where
 
 import Text.XML.HXT.Arrow.Pickle

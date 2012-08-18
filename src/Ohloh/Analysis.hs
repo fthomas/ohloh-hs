@@ -5,7 +5,8 @@
 -- can be found in the LICENSE file.
 
 module Ohloh.Analysis (
-  Analysis(..)
+  Analysis(..),
+  xpAnalysis
 ) where
 
 import Text.XML.HXT.Arrow.Pickle

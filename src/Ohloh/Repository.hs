@@ -6,7 +6,8 @@
 
 module Ohloh.Repository (
   Repository(..),
-  RepositoryType(..)
+  RepositoryType(..),
+  xpRepository
 ) where
 
 import Text.XML.HXT.Arrow.Pickle

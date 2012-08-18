@@ -6,7 +6,8 @@
 
 module Ohloh.Factoid (
   Factoid(..),
-  FactoidType(..)
+  FactoidType(..),
+  xpFactoid
 ) where
 
 import Text.XML.HXT.Arrow.Pickle

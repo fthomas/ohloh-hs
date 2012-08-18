@@ -5,7 +5,8 @@
 -- can be found in the LICENSE file.
 
 module Ohloh.KudoScore (
-  KudoScore(..)
+  KudoScore(..),
+  xpKudoScore
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
