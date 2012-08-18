@@ -36,4 +36,4 @@ xpEnlistment =
     xp4Tuple (xpElem "id" xpText0)
              (xpElem "project_id" xpText0)
              (xpElem "repository_id" xpText0)
-             (xpElem "repository" xpickle)
+             xpRepository

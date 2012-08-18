@@ -41,4 +41,4 @@ xpStack =
              (xpElem "project_count" xpInt)
              (xpElem "stack_entries" (xpList xpickle))
              (xpElem "account_id" xpText0)
-             (xpOption (xpElem "account" xpickle))
+             (xpOption xpAccount)

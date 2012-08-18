@@ -38,4 +38,4 @@ xpStackEntry =
              (xpElem "created_at" xpText0)
              (xpElem "stack_id" xpText0)
              (xpElem "project_id" xpText0)
-             (xpElem "project" xpickle)
+             (xpOption xpProject)

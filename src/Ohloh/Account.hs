@@ -54,4 +54,4 @@ xpAccount =
               (xpOption (xpElem "country_code" xpText0))
               (xpOption (xpElem "latitude" xpText0))
               (xpOption (xpElem "longitude" xpText0))
-              (xpOption (xpElem "kudo_score" xpickle))
+              (xpOption xpKudoScore)
