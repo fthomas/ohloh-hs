@@ -21,6 +21,9 @@ tests = [
     testGroup "Account" [
       testProperty "showReadXml" (prop_showReadXml :: Account -> Bool)
     ],
+    testGroup "ActivityFact" [
+      testProperty "showReadXml" (prop_showReadXml :: ActivityFact -> Bool)
+    ],
     testGroup "Analysis" [
       testProperty "showReadXml" (prop_showReadXml :: Analysis -> Bool)
     ],
@@ -78,6 +81,19 @@ instance Arbitrary Account where
     lo <- xmlTextGen
     ks <- arbitrary
     return (Account i n ca ua (Just hu) au es pc (Just l) (Just cc) (Just la) (Just lo) ks)
+
+instance Arbitrary ActivityFact where
+  arbitrary = do
+    m   <- xmlTextGen
+    ca  <- arbitrary
+    cr  <- arbitrary
+    coa <- arbitrary
+    cor <- arbitrary
+    ba  <- arbitrary
+    br  <- arbitrary
+    c   <- arbitrary
+    co  <- arbitrary
+    return (ActivityFact m ca cr coa cor ba br c co)
 
 instance Arbitrary Analysis where
   arbitrary = do

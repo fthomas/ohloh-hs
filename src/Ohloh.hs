@@ -6,6 +6,7 @@
 
 module Ohloh (module X) where
 import Ohloh.Account as X
+import Ohloh.ActivityFact as X
 import Ohloh.Analysis as X
 import Ohloh.Common as X
 import Ohloh.Enlistment as X

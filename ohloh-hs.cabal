@@ -18,6 +18,7 @@ source-repository head
 library
   exposed-modules:  Ohloh
                     Ohloh.Account
+                    Ohloh.ActivityFact
                     Ohloh.Analysis
                     Ohloh.Enlistment
                     Ohloh.Factoid
