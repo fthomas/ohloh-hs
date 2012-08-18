@@ -26,6 +26,7 @@ library
                     Ohloh.Project
                     Ohloh.Repository
                     Ohloh.Response
+                    Ohloh.SizeFact
                     Ohloh.Stack
                     Ohloh.StackEntry
   hs-source-dirs:   src
