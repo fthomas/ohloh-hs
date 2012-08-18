@@ -58,4 +58,4 @@ xpProject =
               (xpElem "average_rating" xpPrim)
               (xpElem "rating_count" xpInt)
               (xpElem "analysis_id" xpText0)
-              (xpElem "analysis" xpickle)
+              xpAnalysis

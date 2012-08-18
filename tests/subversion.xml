@@ -10,8 +10,12 @@
       <description>Subversion has rapidly become the version control standard....</description>
       <homepage_url>http://subversion.tigris.org/</homepage_url>
       <download_url>http://subversion.tigris.org/project_packages.html</download_url>
-      <irc_url></irc_url>
+      <url_name/>
+      <medium_logo_url/>
+      <small_logo_url/>
       <stack_count>1096</stack_count>
+      <average_rating>1.0</average_rating>
+      <rating_count>100</rating_count>
       <analysis_id>51898</analysis_id>
       <analysis>
         <id>51898</id>
