@@ -42,6 +42,9 @@ tests = [
     testGroup "Repository" [
       testProperty "showReadXml" (prop_showReadXml :: Repository -> Bool)
     ],
+    testGroup "SizeFact" [
+      testProperty "showReadXml" (prop_showReadXml :: SizeFact -> Bool)
+    ],
     testGroup "Stack" [
       testProperty "showReadXml" (prop_showReadXml :: Stack -> Bool)
     ],
@@ -190,6 +193,17 @@ instance Arbitrary Repository where
     c   <- arbitrary
     ojs <- xmlTextGen
     return (Repository i rt u (Just mn) (Just un) (Just pw) la c ojs)
+
+instance Arbitrary SizeFact where
+  arbitrary = do
+    m  <- xmlTextGen
+    c  <- arbitrary
+    co <- arbitrary
+    b  <- arbitrary
+    cr <- arbitrary
+    cm <- arbitrary
+    mm <- arbitrary
+    return (SizeFact m c co b cr cm mm)
 
 instance Arbitrary Stack where
   arbitrary = do
