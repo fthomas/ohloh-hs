@@ -26,7 +26,7 @@ data ContributorFact = ContributorFact {
   cfCommentRatio :: Double,
   cfFirstCommitTime :: String,
   cfLastCommitTime :: String,
-  cfManMonths :: String,
+  cfManMonths :: Int,
   cfCommits :: Int,
   cfMedianCommits :: Int,
   cfContributorLanguageFacts :: [ContributorLanguageFact]
