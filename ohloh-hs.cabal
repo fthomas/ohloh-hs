@@ -24,6 +24,7 @@ library
                     Ohloh.ContributorLanguageFact
                     Ohloh.Enlistment
                     Ohloh.Factoid
+                    Ohloh.Kudo
                     Ohloh.KudoScore
                     Ohloh.Language
                     Ohloh.Project

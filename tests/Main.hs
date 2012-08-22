@@ -41,6 +41,9 @@ tests = [
     testGroup "Factoid" [
       testProperty "pickleUnpickle" (prop_pickleUnpickle :: Factoid -> Bool)
     ],
+    testGroup "Kudo" [
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Kudo -> Bool)
+    ],
     testGroup "KudoScore" [
       testProperty "pickleUnpickle" (prop_pickleUnpickle :: KudoScore -> Bool)
     ],
@@ -182,6 +185,19 @@ instance Arbitrary Factoid where
     s  <- arbitrary
     li <- xmlTextGen
     return (Factoid i ai t d s (Just li))
+
+instance Arbitrary Kudo where
+  arbitrary = do
+    ca  <- xmlTextGen
+    sai <- arbitrary
+    san <- arbitrary
+    rai <- arbitrary
+    ran <- arbitrary
+    pi  <- arbitrary
+    pn  <- arbitrary
+    ci  <- arbitrary
+    cn  <- arbitrary
+    return (Kudo ca sai san rai ran pi pn ci cn)
 
 instance Arbitrary KudoScore where
   arbitrary = do

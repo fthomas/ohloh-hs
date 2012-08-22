@@ -13,6 +13,7 @@ import Ohloh.ContributorFact as X
 import Ohloh.ContributorLanguageFact as X
 import Ohloh.Enlistment as X
 import Ohloh.Factoid as X
+import Ohloh.Kudo as X
 import Ohloh.KudoScore as X
 import Ohloh.Language as X
 import Ohloh.Project as X

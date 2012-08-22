@@ -1,6 +1,5 @@
 - tool to parse response from file and to show it
 - retrieve responses via HTTP
-- add missing data types
 - command-line tool for retrieving data
 - use special type for dates
 - support additional HTTP parameters
