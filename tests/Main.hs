@@ -11,6 +11,8 @@ import Test.QuickCheck
 import Test.Framework (defaultMain, testGroup)
 import Test.Framework.Providers.QuickCheck2 (testProperty)
 
+import Text.XML.HXT.Core
+
 import Ohloh
 
 main :: IO ()
@@ -19,48 +21,47 @@ main = defaultMain tests
 
 tests = [
     testGroup "Account" [
-      testProperty "showReadXml" (prop_showReadXml :: Account -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Account -> Bool)
     ],
     testGroup "ActivityFact" [
-      testProperty "showReadXml" (prop_showReadXml :: ActivityFact -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: ActivityFact -> Bool)
     ],
     testGroup "Analysis" [
-      testProperty "showReadXml" (prop_showReadXml :: Analysis -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Analysis -> Bool)
     ],
     testGroup "Enlistment" [
-      testProperty "showReadXml" (prop_showReadXml :: Enlistment -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Enlistment -> Bool)
     ],
     testGroup "Factoid" [
-      testProperty "showReadXml" (prop_showReadXml :: Factoid -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Factoid -> Bool)
     ],
     testGroup "KudoScore" [
-      testProperty "showReadXml" (prop_showReadXml :: KudoScore -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: KudoScore -> Bool)
     ],
     testGroup "Language" [
-      testProperty "showReadXml" (prop_showReadXml :: Language -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Language -> Bool)
     ],
     testGroup "Project" [
-      testProperty "showReadXml" (prop_showReadXml :: Project -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Project -> Bool)
     ],
     testGroup "Repository" [
-      testProperty "showReadXml" (prop_showReadXml :: Repository -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Repository -> Bool)
     ],
     testGroup "SizeFact" [
-      testProperty "showReadXml" (prop_showReadXml :: SizeFact -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: SizeFact -> Bool)
     ],
     testGroup "Stack" [
-      testProperty "showReadXml" (prop_showReadXml :: Stack -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: Stack -> Bool)
     ],
     testGroup "StackEntry" [
-      testProperty "showReadXml" (prop_showReadXml :: StackEntry -> Bool)
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: StackEntry -> Bool)
     ]
   ]
 
+prop_pickleUnpickle x = (unpickleDoc xpickle . pickleDoc xpickle) x == Just x
 
-prop_showReadXml x = (readXmlString . showXmlString) x == Just x
 
-
-legalXmlCharsSubset = ['\x9', '\xA'] ++ ['\x20' .. '\xFF']
+legalXmlCharsSubset = ['\x9', '\xA', '\xD'] ++ ['\x20' .. '\xFF']
 
 xmlTextGen :: Gen String
 xmlTextGen = (listOf . elements) legalXmlCharsSubset
