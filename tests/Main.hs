@@ -29,6 +29,9 @@ tests = [
     testGroup "Analysis" [
       testProperty "pickleUnpickle" (prop_pickleUnpickle :: Analysis -> Bool)
     ],
+    testGroup "ContributorFact" [
+      testProperty "pickleUnpickle" (prop_pickleUnpickle :: ContributorFact -> Bool)
+    ],
     testGroup "ContributorLanguageFact" [
       testProperty "pickleUnpickle" (prop_pickleUnpickle :: ContributorLanguageFact -> Bool)
     ],
@@ -112,6 +115,24 @@ instance Arbitrary Analysis where
     mli  <- xmlTextGen
     mln  <- xmlTextGen
     return (Analysis i pi ua la min max tmcc tcl mli mln)
+
+instance Arbitrary ContributorFact where
+  arbitrary = do
+    ai   <- xmlTextGen
+    ci   <- xmlTextGen
+    cn   <- xmlTextGen
+    aci  <- xmlTextGen
+    acn  <- xmlTextGen
+    pli  <- xmlTextGen
+    plnn <- xmlTextGen
+    cr   <- arbitrary
+    fct  <- xmlTextGen
+    lct  <- xmlTextGen
+    mm   <- arbitrary
+    c    <- arbitrary
+    mc   <- arbitrary
+    clf  <- arbitrary
+    return (ContributorFact ai ci cn (Just aci) (Just acn) pli plnn cr fct lct mm c mc clf)
 
 instance Arbitrary ContributorLanguageFact where
   arbitrary = do
