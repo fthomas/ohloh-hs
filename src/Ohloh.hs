@@ -9,6 +9,7 @@ import Ohloh.Account as X
 import Ohloh.ActivityFact as X
 import Ohloh.Analysis as X
 import Ohloh.Common as X
+import Ohloh.ContributorLanguageFact as X
 import Ohloh.Enlistment as X
 import Ohloh.Factoid as X
 import Ohloh.KudoScore as X
