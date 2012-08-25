@@ -29,6 +29,7 @@ data ActivityFact = ActivityFact {
 instance XmlPickler ActivityFact where
   xpickle = xpActivityFact
 
+instance ResultType ActivityFact
 instance ReadXmlString ActivityFact
 instance ShowXmlString ActivityFact
 

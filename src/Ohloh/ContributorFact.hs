@@ -35,6 +35,7 @@ data ContributorFact = ContributorFact {
 instance XmlPickler ContributorFact where
   xpickle = xpContributorFact
 
+instance ResultType ContributorFact
 instance ReadXmlString ContributorFact
 instance ShowXmlString ContributorFact
 

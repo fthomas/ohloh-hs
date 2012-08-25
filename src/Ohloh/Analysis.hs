@@ -30,6 +30,7 @@ data Analysis = Analysis {
 instance XmlPickler Analysis where
   xpickle = xpAnalysis
 
+instance ResultType Analysis
 instance ReadXmlString Analysis
 instance ShowXmlString Analysis
 

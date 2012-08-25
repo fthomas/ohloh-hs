@@ -29,6 +29,7 @@ data Kudo = Kudo {
 instance XmlPickler Kudo where
   xpickle = xpKudo
 
+instance ResultType Kudo
 instance ReadXmlString Kudo
 instance ShowXmlString Kudo
 

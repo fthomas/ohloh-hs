@@ -29,6 +29,7 @@ data ContributorLanguageFact = ContributorLanguageFact {
 instance XmlPickler ContributorLanguageFact where
   xpickle = xpContributorLanguageFact
 
+instance ResultType ContributorLanguageFact
 instance ReadXmlString ContributorLanguageFact
 instance ShowXmlString ContributorLanguageFact
 

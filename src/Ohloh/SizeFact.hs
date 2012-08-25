@@ -27,6 +27,7 @@ data SizeFact = SizeFact {
 instance XmlPickler SizeFact where
   xpickle = xpSizeFact
 
+instance ResultType SizeFact
 instance ReadXmlString SizeFact
 instance ShowXmlString SizeFact
 

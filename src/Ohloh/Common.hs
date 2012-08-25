@@ -8,6 +8,8 @@ module Ohloh.Common where
 
 import Text.XML.HXT.Core
 
+class ResultType a
+
 class ReadXmlString a where
   readXmlString :: (XmlPickler a) => String -> Maybe a
   readXmlString xml =
