@@ -11,9 +11,11 @@ module Ohloh.Repository (
   xpRepository
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
+import Ohloh.Lens.IdL
 
 data RepositoryType =
   SvnRepository |
@@ -57,3 +59,6 @@ xpRepository =
              (xpElem "logged_at" xpText0)
              (xpElem "commits" xpInt)
              (xpElem "ohloh_job_status" xpText0)
+
+instance IdL Repository where
+  idL = lens repoId $ \id repo -> repo { repoId = id }

@@ -10,9 +10,11 @@ module Ohloh.Language (
   xpLanguage
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
+import Ohloh.Lens.IdL
 
 data Language = Language {
   langId :: String,
@@ -52,3 +54,6 @@ xpLanguage =
               (xpElem "projects" xpInt)
               (xpElem "contributors" xpInt)
               (xpElem "commits" xpInt)
+
+instance IdL Language where
+  idL = lens langId $ \id lang -> lang { langId = id }

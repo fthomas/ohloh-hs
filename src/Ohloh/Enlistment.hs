@@ -10,9 +10,11 @@ module Ohloh.Enlistment (
   xpEnlistment
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
+import Ohloh.Lens.IdL
 import Ohloh.Repository
 
 data Enlistment = Enlistment {
@@ -39,3 +41,6 @@ xpEnlistment =
              (xpElem "project_id" xpText0)
              (xpElem "repository_id" xpText0)
              xpRepository
+
+instance IdL Enlistment where
+  idL = lens enId $ \id en -> en { enId = id }

@@ -10,10 +10,12 @@ module Ohloh.Project (
   xpProject
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Analysis
 import Ohloh.Common
+import Ohloh.Lens.IdL
 
 data Project = Project {
   projId :: String,
@@ -61,3 +63,6 @@ xpProject =
               (xpElem "rating_count" xpInt)
               (xpElem "analysis_id" xpText0)
               xpAnalysis
+
+instance IdL Project where
+  idL = lens projId $ \id proj -> proj { projId = id }

@@ -11,9 +11,11 @@ module Ohloh.Factoid (
   xpFactoid
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
+import Ohloh.Lens.IdL
 
 data FactoidType =
   FactoidActivityDecreasing |
@@ -61,3 +63,6 @@ xpFactoid =
              (xpElem "description" xpText0)
              (xpElem "severity" xpInt)
              (xpOption (xpElem "license_id" xpText0))
+
+instance IdL Factoid where
+  idL = lens factId $ \id fact -> fact { factId = id }

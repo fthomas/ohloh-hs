@@ -10,10 +10,12 @@ module Ohloh.Account (
   xpAccount
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 import Ohloh.KudoScore
+import Ohloh.Lens.IdL
 
 data Account = Account {
   accId :: String,
@@ -57,3 +59,6 @@ xpAccount =
               (xpOption (xpElem "latitude" xpText0))
               (xpOption (xpElem "longitude" xpText0))
               (xpOption xpKudoScore)
+
+instance IdL Account where
+  idL = lens accId $ \id acc -> acc { accId = id }

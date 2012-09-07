@@ -10,10 +10,12 @@ module Ohloh.Stack (
   xpStack
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Account
 import Ohloh.Common
+import Ohloh.Lens.IdL
 import Ohloh.StackEntry
 
 data Stack = Stack {
@@ -44,3 +46,6 @@ xpStack =
              (xpElem "stack_entries" (xpList xpickle))
              (xpElem "account_id" xpText0)
              (xpOption xpAccount)
+
+instance IdL Stack where
+  idL = lens staId $ \id sta -> sta { staId = id }

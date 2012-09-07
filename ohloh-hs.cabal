@@ -27,6 +27,7 @@ library
                     Ohloh.Kudo
                     Ohloh.KudoScore
                     Ohloh.Language
+                    Ohloh.Lens.IdL
                     Ohloh.Project
                     Ohloh.Repository
                     Ohloh.Response
@@ -35,6 +36,7 @@ library
                     Ohloh.StackEntry
   hs-source-dirs:   src
   build-depends:    base >= 4 && < 5,
+                    data-lens,
                     hxt
 
 executable cmdoh
@@ -54,6 +56,7 @@ executable subversion
                     -fno-warn-missing-signatures
                     -fno-warn-name-shadowing
   build-depends:    base >= 4 && < 5,
+                    data-lens,
                     hxt,
                     pretty-show
 
@@ -64,6 +67,7 @@ test-suite tests
   ghc-options:      -Wall
                     -fno-warn-name-shadowing
   build-depends:    base >= 4 && < 5,
+                    data-lens,
                     hxt,
                     test-framework,
                     test-framework-quickcheck2,

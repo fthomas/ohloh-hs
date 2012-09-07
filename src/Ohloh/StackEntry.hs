@@ -10,9 +10,11 @@ module Ohloh.StackEntry (
   xpStackEntry
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
+import Ohloh.Lens.IdL
 import Ohloh.Project
 
 data StackEntry = StackEntry {
@@ -40,3 +42,6 @@ xpStackEntry =
              (xpElem "stack_id" xpText0)
              (xpElem "project_id" xpText0)
              (xpOption xpProject)
+
+instance IdL StackEntry where
+  idL = lens seId $ \id se -> se { seId = id }

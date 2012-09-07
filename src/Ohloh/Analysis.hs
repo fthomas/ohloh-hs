@@ -10,9 +10,11 @@ module Ohloh.Analysis (
   xpAnalysis
 ) where
 
+import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
+import Ohloh.Lens.IdL
 
 data Analysis = Analysis {
   anaId :: String,
@@ -50,3 +52,6 @@ xpAnalysis =
               (xpElem "total_code_lines" xpInt)
               (xpElem "main_language_id" xpText0)
               (xpElem "main_language_name" xpText0)
+
+instance IdL Analysis where
+  idL = lens anaId $ \id ana -> ana { anaId = id }
