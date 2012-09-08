@@ -16,9 +16,12 @@ import Ohloh.Factoid as X
 import Ohloh.Kudo as X
 import Ohloh.KudoScore as X
 import Ohloh.Language as X
+import Ohloh.Lens.IdL as X
+import Ohloh.Lens.NameL as X
 import Ohloh.Project as X
 import Ohloh.Repository as X
 import Ohloh.Response as X
+import Ohloh.ResultType as X
 import Ohloh.SizeFact as X
 import Ohloh.Stack as X
 import Ohloh.StackEntry as X

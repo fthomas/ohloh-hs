@@ -27,7 +27,6 @@ data Enlistment = Enlistment {
 instance XmlPickler Enlistment where
   xpickle = xpEnlistment
 
-instance ResultType Enlistment
 instance ReadXmlString Enlistment
 instance ShowXmlString Enlistment
 

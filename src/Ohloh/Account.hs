@@ -37,7 +37,6 @@ data Account = Account {
 instance XmlPickler Account where
   xpickle = xpAccount
 
-instance ResultType Account
 instance ReadXmlString Account
 instance ShowXmlString Account
 

@@ -47,7 +47,6 @@ data Factoid = Factoid {
 instance XmlPickler Factoid where
   xpickle = xpFactoid
 
-instance ResultType Factoid
 instance ReadXmlString Factoid
 instance ShowXmlString Factoid
 

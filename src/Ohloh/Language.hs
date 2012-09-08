@@ -34,7 +34,6 @@ data Language = Language {
 instance XmlPickler Language where
   xpickle = xpLanguage
 
-instance ResultType Language
 instance ReadXmlString Language
 instance ShowXmlString Language
 

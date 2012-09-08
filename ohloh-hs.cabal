@@ -32,6 +32,7 @@ library
                     Ohloh.Project
                     Ohloh.Repository
                     Ohloh.Response
+                    Ohloh.ResultType
                     Ohloh.SizeFact
                     Ohloh.Stack
                     Ohloh.StackEntry
@@ -47,6 +48,7 @@ executable cmdoh
                     -fno-warn-missing-signatures
                     -fno-warn-name-shadowing
   build-depends:    base >= 4 && < 5,
+                    data-lens,
                     hxt,
                     cmdargs
 

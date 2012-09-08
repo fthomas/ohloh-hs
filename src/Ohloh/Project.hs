@@ -39,7 +39,6 @@ data Project = Project {
 instance XmlPickler Project where
   xpickle = xpProject
 
-instance ResultType Project
 instance ReadXmlString Project
 instance ShowXmlString Project
 

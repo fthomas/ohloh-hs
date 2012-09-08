@@ -30,7 +30,6 @@ data Stack = Stack {
 instance XmlPickler Stack where
   xpickle = xpStack
 
-instance ResultType Stack
 instance ReadXmlString Stack
 instance ShowXmlString Stack
 

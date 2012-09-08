@@ -12,23 +12,24 @@ module Ohloh.Response (
 import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
+import Ohloh.ResultType
 
-data Response a = Response {
+data Response = Response {
   respStatus :: String,
   respError :: Maybe String,
   respItemsReturned :: Maybe Int,
   respItemsAvailable :: Maybe Int,
   respFirstItemPosition :: Maybe Int,
-  respResult :: [a]
+  respResult :: [ResultType]
 } deriving (Eq, Show, Read)
 
-instance XmlPickler a => XmlPickler (Response a) where
+instance XmlPickler Response where
   xpickle = xpResponse
 
-instance ReadXmlString (Response a)
-instance ShowXmlString (Response a)
+instance ReadXmlString Response
+instance ShowXmlString Response
 
-xpResponse :: XmlPickler a => PU (Response a)
+xpResponse :: PU Response
 xpResponse =
   xpElem "response" $
     xpWrap (uncurry6 Response,
