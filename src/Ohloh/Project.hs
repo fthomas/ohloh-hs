@@ -16,6 +16,7 @@ import Text.XML.HXT.Arrow.Pickle
 import Ohloh.Analysis
 import Ohloh.Common
 import Ohloh.Lens.IdL
+import Ohloh.Lens.NameL
 
 data Project = Project {
   projId :: String,
@@ -66,3 +67,6 @@ xpProject =
 
 instance IdL Project where
   idL = lens projId $ \id proj -> proj { projId = id }
+
+instance NameL Project where
+  nameL = lens projName $ \name proj -> proj { projName = name }

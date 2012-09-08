@@ -28,6 +28,7 @@ library
                     Ohloh.KudoScore
                     Ohloh.Language
                     Ohloh.Lens.IdL
+                    Ohloh.Lens.NameL
                     Ohloh.Project
                     Ohloh.Repository
                     Ohloh.Response

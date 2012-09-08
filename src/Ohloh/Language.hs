@@ -15,6 +15,7 @@ import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 import Ohloh.Lens.IdL
+import Ohloh.Lens.NameL
 
 data Language = Language {
   langId :: String,
@@ -57,3 +58,6 @@ xpLanguage =
 
 instance IdL Language where
   idL = lens langId $ \id lang -> lang { langId = id }
+
+instance NameL Language where
+  nameL = lens langName $ \name lang -> lang { langName = name }

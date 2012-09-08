@@ -16,6 +16,7 @@ import Text.XML.HXT.Arrow.Pickle
 import Ohloh.Common
 import Ohloh.KudoScore
 import Ohloh.Lens.IdL
+import Ohloh.Lens.NameL
 
 data Account = Account {
   accId :: String,
@@ -62,3 +63,6 @@ xpAccount =
 
 instance IdL Account where
   idL = lens accId $ \id acc -> acc { accId = id }
+
+instance NameL Account where
+  nameL = lens accName $ \name acc -> acc { accName = name }
