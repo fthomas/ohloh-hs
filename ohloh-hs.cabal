@@ -29,6 +29,7 @@ library
                     Ohloh.Language
                     Ohloh.Lens.IdL
                     Ohloh.Lens.NameL
+                    Ohloh.Lens.UpdatedAtL
                     Ohloh.Project
                     Ohloh.Repository
                     Ohloh.Response

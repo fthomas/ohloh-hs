@@ -17,6 +17,7 @@ import Ohloh.Common
 import Ohloh.KudoScore
 import Ohloh.Lens.IdL
 import Ohloh.Lens.NameL
+import Ohloh.Lens.UpdatedAtL
 
 data Account = Account {
   accId :: String,
@@ -65,3 +66,6 @@ instance IdL Account where
 
 instance NameL Account where
   nameL = lens accName $ \name acc -> acc { accName = name }
+
+instance UpdatedAtL Account where
+  updatedAtL = lens accUpdatedAt $ \updatedAt acc -> acc { accUpdatedAt = updatedAt }

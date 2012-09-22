@@ -16,6 +16,7 @@ import Text.XML.HXT.Arrow.Pickle
 import Ohloh.Account
 import Ohloh.Common
 import Ohloh.Lens.IdL
+import Ohloh.Lens.UpdatedAtL
 import Ohloh.StackEntry
 
 data Stack = Stack {
@@ -48,3 +49,6 @@ xpStack =
 
 instance IdL Stack where
   idL = lens staId $ \id sta -> sta { staId = id }
+
+instance UpdatedAtL Stack where
+  updatedAtL = lens staUpdatedAt $ \updatedAt sta -> sta { staUpdatedAt = updatedAt }

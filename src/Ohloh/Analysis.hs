@@ -15,6 +15,7 @@ import Text.XML.HXT.Arrow.Pickle
 
 import Ohloh.Common
 import Ohloh.Lens.IdL
+import Ohloh.Lens.UpdatedAtL
 
 data Analysis = Analysis {
   anaId :: String,
@@ -54,3 +55,7 @@ xpAnalysis =
 
 instance IdL Analysis where
   idL = lens anaId $ \id ana -> ana { anaId = id }
+
+instance UpdatedAtL Analysis where
+  updatedAtL = lens anaUpdatedAt $ \updatedAt ana -> ana { anaUpdatedAt = updatedAt }
+

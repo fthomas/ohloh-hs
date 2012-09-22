@@ -18,6 +18,7 @@ import Ohloh.KudoScore as X
 import Ohloh.Language as X
 import Ohloh.Lens.IdL as X
 import Ohloh.Lens.NameL as X
+import Ohloh.Lens.UpdatedAtL as X
 import Ohloh.Project as X
 import Ohloh.Repository as X
 import Ohloh.Response as X

@@ -17,6 +17,7 @@ import Ohloh.Analysis
 import Ohloh.Common
 import Ohloh.Lens.IdL
 import Ohloh.Lens.NameL
+import Ohloh.Lens.UpdatedAtL
 
 data Project = Project {
   projId :: String,
@@ -69,3 +70,6 @@ instance IdL Project where
 
 instance NameL Project where
   nameL = lens projName $ \name proj -> proj { projName = name }
+
+instance UpdatedAtL Project where
+  updatedAtL = lens projUpdatedAt $ \updatedAt proj -> proj { projUpdatedAt = updatedAt }
