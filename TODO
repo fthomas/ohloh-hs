@@ -1,4 +1,3 @@
-- tool to parse response from file and to show it
 - retrieve responses via HTTP
 - command-line tool for retrieving data
 - use special type for dates

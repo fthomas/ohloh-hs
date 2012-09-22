@@ -50,7 +50,8 @@ executable cmdoh
   build-depends:    base >= 4 && < 5,
                     data-lens,
                     hxt,
-                    cmdargs
+                    cmdargs,
+                    pretty-show
 
 executable subversion
   main-is:          subversion.hs

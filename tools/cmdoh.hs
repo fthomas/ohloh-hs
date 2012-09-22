@@ -8,7 +8,12 @@
 
 module Main where
 
+import Data.Maybe
 import System.Console.CmdArgs
+import Text.Show.Pretty
+import Text.XML.HXT.Core
+
+import Ohloh.Response
 
 data CmdOh = Read {file :: Maybe FilePath}
            | Fetch
@@ -23,11 +28,8 @@ main = do
   handleArgs args
 
 handleArgs Read{..} = do
-  contents <-
-    case file of
-      Just f  -> readFile f
-      Nothing -> getContents
-  putStrLn contents
+  doc <- runX $ readDocument [ withRemoveWS yes ] $ fromMaybe "" file
+  putStrLn $ ppShow $ unpickleDoc xpResponse $ head doc
 
 handleArgs args@Fetch{..} = do
   print args
