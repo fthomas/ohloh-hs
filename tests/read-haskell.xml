@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <status>success</status>
+  <result>
+    <language>
+      <id>38</id>
+      <name>haskell</name>
+      <nice_name>Haskell</nice_name>
+      <category>code</category>
+      <code>4707403</code>
+      <comments>1000082</comments>
+      <blanks>931974</blanks>
+      <comment_ratio>0.175222887138556</comment_ratio>
+      <projects>2134</projects>
+      <contributors>3589</contributors>
+      <commits>201723</commits>
+    </language>
+  </result>
+</response>

@@ -54,8 +54,20 @@ executable cmdoh
                     cmdargs,
                     pretty-show
 
-executable subversion
-  main-is:          subversion.hs
+executable fetch-haskell
+  main-is:          fetch-haskell.hs
+  hs-source-dirs:   src, tests
+  ghc-options:      -Wall
+                    -fno-warn-missing-signatures
+                    -fno-warn-name-shadowing
+  build-depends:    base >= 4 && < 5,
+                    data-lens,
+                    hxt,
+                    hxt-curl,
+                    pretty-show
+
+executable read-haskell
+  main-is:          read-haskell.hs
   hs-source-dirs:   src, tests
   ghc-options:      -Wall
                     -fno-warn-missing-signatures
