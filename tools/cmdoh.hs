@@ -28,8 +28,8 @@ main = do
   handleArgs args
 
 handleArgs Read{..} = do
-  doc <- runX $ readDocument [ withRemoveWS yes ] $ fromMaybe "" file
-  putStrLn $ ppShow $ unpickleDoc xpResponse $ head doc
+  res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes ] $ fromMaybe "" file
+  putStrLn $ ppShow $ head res
 
 handleArgs args@Fetch{..} = do
   print args
