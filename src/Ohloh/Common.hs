@@ -8,6 +8,35 @@ module Ohloh.Common where
 
 import Text.XML.HXT.Core
 
+queryPaths :: [(String, String)]
+queryPaths = [
+    ("account",             "accounts/{0}.xml"),
+    ("accounts",            "accounts.xml"),
+    ("activity_facts",      "projects/{0}/analyses/{1}/activity_facts.xml"),
+    ("analysis",            "projects/{0}/analyses/{1}.xml"),
+    ("contributor_fact",    "projects/{0}/contributors/{1}.xml"),
+    ("contributor_facts",   "projects/{0}/contributors.xml"),
+    ("enlistment",          "projects/{0}/enlistments/{1}.xml"),
+    ("enlistments",         "projects/{0}/enlistments.xml"),
+    ("factoid",             "projects/{0}/factoids/{1}.xml"),
+    ("factoids",            "projects/{0}/factoids.xml"),
+    ("kudos",               "accounts/{0}/kudos.xml"),
+    ("kudos_sent",          "accounts/{0}/kudos/sent.xml"),
+    ("language",            "languages/{0}.xml"),
+    ("languages",           "languages.xml"),
+    ("project",             "projects/{0}.xml"),
+    ("projects",            "projects.xml"),
+    ("size_facts",          "projects/{0}/analyses/{1}/size_facts.xml"),
+    ("stack",               "accounts/{0}/stacks/{1}.xml"),
+    ("stacks",              "projects/{0}/stacks.xml")
+  ]
+
+queryUrl :: String -> Maybe String
+queryUrl x = do
+  let url = "https://www.ohloh.net/"
+  path <- lookup x queryPaths
+  return (url ++ path)
+
 class ReadXmlString a where
   readXmlString :: (XmlPickler a) => String -> Maybe a
   readXmlString xml =
