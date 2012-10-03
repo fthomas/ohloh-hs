@@ -6,6 +6,7 @@
 
 module Ohloh.Common where
 
+import Text.Format
 import Text.XML.HXT.Core
 
 queryPaths :: [(String, String)]
@@ -31,11 +32,11 @@ queryPaths = [
     ("stacks",              "projects/{0}/stacks.xml")
   ]
 
-queryUrl :: String -> Maybe String
-queryUrl x = do
+queryUrl :: String -> [String] -> Maybe String
+queryUrl x args = do
   let url = "https://www.ohloh.net/"
   path <- lookup x queryPaths
-  return (url ++ path)
+  return $ url ++ (format path args)
 
 class ReadXmlString a where
   readXmlString :: (XmlPickler a) => String -> Maybe a

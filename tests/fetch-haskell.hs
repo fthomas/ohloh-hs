@@ -6,8 +6,8 @@ import Ohloh
 
 -- Insert your API Key here:
 apiKey = ""
-queryUrl = "http://www.ohloh.net/languages/haskell.xml?api_key=" ++ apiKey
+myQueryUrl = "http://www.ohloh.net/languages/haskell.xml?api_key=" ++ apiKey
 
 main = do
-  res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes, withCurl [] ] $ queryUrl
+  res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes, withCurl [] ] $ myQueryUrl
   putStrLn $ ppShow $ head res

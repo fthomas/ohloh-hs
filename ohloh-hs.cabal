@@ -40,7 +40,8 @@ library
   hs-source-dirs:   src
   build-depends:    base >= 4 && < 5,
                     data-lens,
-                    hxt
+                    hxt,
+                    text-format-simple
 
 executable cmdoh
   main-is:          cmdoh.hs
@@ -52,7 +53,8 @@ executable cmdoh
                     data-lens,
                     hxt,
                     cmdargs,
-                    pretty-show
+                    pretty-show,
+                    text-format-simple
 
 executable fetch-haskell
   main-is:          fetch-haskell.hs
@@ -64,7 +66,8 @@ executable fetch-haskell
                     data-lens,
                     hxt,
                     hxt-curl,
-                    pretty-show
+                    pretty-show,
+                    text-format-simple
 
 executable read-haskell
   main-is:          read-haskell.hs
@@ -75,7 +78,8 @@ executable read-haskell
   build-depends:    base >= 4 && < 5,
                     data-lens,
                     hxt,
-                    pretty-show
+                    pretty-show,
+                    text-format-simple
 
 test-suite tests
   type:             exitcode-stdio-1.0     
@@ -86,6 +90,7 @@ test-suite tests
   build-depends:    base >= 4 && < 5,
                     data-lens,
                     hxt,
+                    text-format-simple,
                     test-framework,
                     test-framework-quickcheck2,
                     QuickCheck
