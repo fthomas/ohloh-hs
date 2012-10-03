@@ -16,11 +16,11 @@ import Text.XML.HXT.Core
 import Ohloh.Response
 
 data CmdOh = Read {file :: Maybe FilePath}
-           | Fetch
+           | Fetch {key :: String}
              deriving (Show, Data, Typeable)
 
 cmdRead = Read {file = def}
-cmdFetch = Fetch
+cmdFetch = Fetch {key = def}
 
 main :: IO ()
 main = do
@@ -33,3 +33,8 @@ handleArgs Read{..} = do
 
 handleArgs args@Fetch{..} = do
   print args
+
+--get x_i???
+--myQueryUrl <- queryUrl x1 [x2, ...] + "?api_key=" ++ key
+--res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes, withCurl [] ] $ myQueryUrl
+--putStrLn $ ppShow $ head res
