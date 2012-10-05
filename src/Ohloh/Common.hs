@@ -34,7 +34,7 @@ queryPaths = [
 
 queryUrl :: String -> [String] -> Maybe String
 queryUrl x args = do
-  let url = "https://www.ohloh.net/"
+  let url = "http://www.ohloh.net/"
   path <- lookup x queryPaths
   return $ url ++ (format path args)
 

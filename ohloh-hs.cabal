@@ -52,6 +52,7 @@ executable cmdoh
   build-depends:    base >= 4 && < 5,
                     data-lens,
                     hxt,
+                    hxt-curl,
                     cmdargs,
                     pretty-show,
                     text-format-simple
