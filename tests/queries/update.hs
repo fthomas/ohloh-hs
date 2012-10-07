@@ -1,4 +1,4 @@
-import Data.ByteString as BS
+import qualified Data.ByteString as BS
 import Data.Maybe
 import Network.Curl.Download
 
@@ -10,7 +10,7 @@ downloadFile item args = do
   let url = fromJust $ queryUrl item args `withApiKey` key
   content <- openURI url
   case content of
-    Left  _ -> return ()
+    Left  x -> putStrLn x
     Right x -> BS.writeFile (item ++ ".xml") x
 
 main = do
