@@ -37,9 +37,11 @@ handleArgs Read{..} = do
   putStrLn $ ppShow $ head res
 
 handleArgs Fetch{..} = do
-  let url = fromMaybe "" $ queryUrl queryItem queryArgs `withApiKey` key
-  res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes, withCurl [] ] url
-  putStrLn $ ppShow $ head res
+  let maybeUrl = queryUrl queryItem queryArgs `withApiKey` key
+  case maybeUrl of
+    Nothing  -> putStrLn $ "Unknown query item: " ++ queryItem
+    Just url -> do
+      res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes, withCurl [] ] url
+      putStrLn $ ppShow $ head res
 
-withApiKey :: Maybe String -> String -> Maybe String
 withApiKey url key = fmap (++ "?api_key=" ++ key) url
