@@ -43,5 +43,3 @@ handleArgs Fetch{..} = do
     Just url -> do
       res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes, withCurl [] ] url
       putStrLn $ ppShow $ head res
-
-withApiKey url key = fmap (++ "?api_key=" ++ key) url

@@ -38,6 +38,9 @@ queryUrl x args = do
   path <- lookup x queryPaths
   return $ url ++ (format path args)
 
+withApiKey :: Maybe String -> String -> Maybe String
+withApiKey url key = fmap (++ "?api_key=" ++ key) url
+
 class ReadXmlString a where
   readXmlString :: (XmlPickler a) => String -> Maybe a
   readXmlString xml =

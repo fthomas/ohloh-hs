@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <status>success</status>
+  <result>
+    <account>
+      <id>55440</id>
+      <name>Frank S. Thomas</name>
+      <about></about>
+      <login>fst</login>
+      <created_at>2009-08-21T07:51:48Z</created_at>
+      <updated_at>2012-10-07T16:43:06Z</updated_at>
+      <homepage_url>http://timepit.eu/~frank/</homepage_url>
+      <twitter_account></twitter_account>
+      <url>http://www.ohloh.net/accounts/fst.xml</url>
+      <html_url>http://www.ohloh.net/accounts/fst</html_url>
+      <avatar_url>http://www.gravatar.com/avatar.php?gravatar_id=cdd524a64bce10943cc327f0c5566cb6</avatar_url>
+      <email_sha1>30a1f593a63ca4e849f4863921b622282371279b</email_sha1>
+      <posts_count>0</posts_count>
+      <location>Munich, Germany</location>
+      <country_code>DE</country_code>
+      <latitude>48.1366069</latitude>
+      <longitude>11.5770851</longitude>
+      <kudo_score>
+        <kudo_rank>7</kudo_rank>
+        <position>56616</position>
+      </kudo_score>
+      <languages>
+        <language color="F35F1F">
+          <name>cpp</name>
+          <experience_months>34</experience_months>
+          <median_monthly_commits>16</median_monthly_commits>
+          <median_monthly_lines_changed>944</median_monthly_lines_changed>
+          <total_commits>822</total_commits>
+          <total_lines_changed>109,914</total_lines_changed>
+          <comment_ratio>12.3%</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>cmake</name>
+          <experience_months>25</experience_months>
+          <median_monthly_commits>5</median_monthly_commits>
+          <median_monthly_lines_changed>47</median_monthly_lines_changed>
+          <total_commits>182</total_commits>
+          <total_lines_changed>2,396</total_lines_changed>
+          <comment_ratio>3.0%</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>make</name>
+          <experience_months>20</experience_months>
+          <median_monthly_commits>4</median_monthly_commits>
+          <median_monthly_lines_changed>43</median_monthly_lines_changed>
+          <total_commits>114</total_commits>
+          <total_lines_changed>26,584</total_lines_changed>
+          <comment_ratio>5.2%</comment_ratio>
+        </language>
+        <language color="555555">
+          <name>xml</name>
+          <experience_months>12</experience_months>
+          <median_monthly_commits>4</median_monthly_commits>
+          <median_monthly_lines_changed>50</median_monthly_lines_changed>
+          <total_commits>45</total_commits>
+          <total_lines_changed>2,529</total_lines_changed>
+          <comment_ratio>2.9%</comment_ratio>
+        </language>
+        <language color="FF8F00">
+          <name>c</name>
+          <experience_months>12</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>23</median_monthly_lines_changed>
+          <total_commits>36</total_commits>
+          <total_lines_changed>47,443</total_lines_changed>
+          <comment_ratio>6.5%</comment_ratio>
+        </language>
+        <language color="777777">
+          <name>shell</name>
+          <experience_months>5</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>10,502</median_monthly_lines_changed>
+          <total_commits>9</total_commits>
+          <total_lines_changed>61,712</total_lines_changed>
+          <comment_ratio>12.6%</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>scala</name>
+          <experience_months>4</experience_months>
+          <median_monthly_commits>17</median_monthly_commits>
+          <median_monthly_lines_changed>760</median_monthly_lines_changed>
+          <total_commits>145</total_commits>
+          <total_lines_changed>4,300</total_lines_changed>
+          <comment_ratio>24.5%</comment_ratio>
+        </language>
+        <language color="007B7C">
+          <name>haskell</name>
+          <experience_months>4</experience_months>
+          <median_monthly_commits>14</median_monthly_commits>
+          <median_monthly_lines_changed>414</median_monthly_lines_changed>
+          <total_commits>61</total_commits>
+          <total_lines_changed>2,341</total_lines_changed>
+          <comment_ratio>9.5%</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>fortranfixed</name>
+          <experience_months>4</experience_months>
+          <median_monthly_commits>5</median_monthly_commits>
+          <median_monthly_lines_changed>1,338</median_monthly_lines_changed>
+          <total_commits>23</total_commits>
+          <total_lines_changed>11,536</total_lines_changed>
+          <comment_ratio>8.9%</comment_ratio>
+        </language>
+        <language color="000080">
+          <name>tex</name>
+          <experience_months>4</experience_months>
+          <median_monthly_commits>4</median_monthly_commits>
+          <median_monthly_lines_changed>90</median_monthly_lines_changed>
+          <total_commits>20</total_commits>
+          <total_lines_changed>401</total_lines_changed>
+          <comment_ratio>5.1%</comment_ratio>
+        </language>
+        <language color="FF1A00">
+          <name>css</name>
+          <experience_months>4</experience_months>
+          <median_monthly_commits>1</median_monthly_commits>
+          <median_monthly_lines_changed>321</median_monthly_lines_changed>
+          <total_commits>5</total_commits>
+          <total_lines_changed>1,070</total_lines_changed>
+          <comment_ratio>5.2%</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>autoconf</name>
+          <experience_months>3</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>79,778</median_monthly_lines_changed>
+          <total_commits>9</total_commits>
+          <total_lines_changed>237,362</total_lines_changed>
+          <comment_ratio>0.3%</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>automake</name>
+          <experience_months>3</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>122</median_monthly_lines_changed>
+          <total_commits>9</total_commits>
+          <total_lines_changed>478</total_lines_changed>
+          <comment_ratio>8.5%</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>r</name>
+          <experience_months>2</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>24</median_monthly_lines_changed>
+          <total_commits>4</total_commits>
+          <total_lines_changed>48</total_lines_changed>
+          <comment_ratio>-</comment_ratio>
+        </language>
+        <language color="D2C690">
+          <name>perl</name>
+          <experience_months>2</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>4,215</median_monthly_lines_changed>
+          <total_commits>3</total_commits>
+          <total_lines_changed>8,430</total_lines_changed>
+          <comment_ratio>12.1%</comment_ratio>
+        </language>
+        <language color="A40011">
+          <name>ruby</name>
+          <experience_months>2</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>61</median_monthly_lines_changed>
+          <total_commits>3</total_commits>
+          <total_lines_changed>122</total_lines_changed>
+          <comment_ratio>-</comment_ratio>
+        </language>
+        <language color="A4007E">
+          <name>javascript</name>
+          <experience_months>1</experience_months>
+          <median_monthly_commits>5</median_monthly_commits>
+          <median_monthly_lines_changed>31</median_monthly_lines_changed>
+          <total_commits>5</total_commits>
+          <total_lines_changed>31</total_lines_changed>
+          <comment_ratio>-</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>eiffel</name>
+          <experience_months>1</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>26,354</median_monthly_lines_changed>
+          <total_commits>2</total_commits>
+          <total_lines_changed>26,354</total_lines_changed>
+          <comment_ratio>0.0%</comment_ratio>
+        </language>
+        <language color="47A400">
+          <name>html</name>
+          <experience_months>1</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>11,436</median_monthly_lines_changed>
+          <total_commits>2</total_commits>
+          <total_lines_changed>11,436</total_lines_changed>
+          <comment_ratio>2.4%</comment_ratio>
+        </language>
+        <language color="356AA0">
+          <name>php</name>
+          <experience_months>1</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>4</median_monthly_lines_changed>
+          <total_commits>2</total_commits>
+          <total_lines_changed>4</total_lines_changed>
+          <comment_ratio>-</comment_ratio>
+        </language>
+        <language color="EEE">
+          <name>vim</name>
+          <experience_months>1</experience_months>
+          <median_monthly_commits>2</median_monthly_commits>
+          <median_monthly_lines_changed>4</median_monthly_lines_changed>
+          <total_commits>2</total_commits>
+          <total_lines_changed>4</total_lines_changed>
+          <comment_ratio>-</comment_ratio>
+        </language>
+      </languages>
+    </account>
+  </result>
+</response>

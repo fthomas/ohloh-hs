@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <status>success</status>
+  <result>
+    <analysis>
+      <id>10568125</id>
+      <url>http://www.ohloh.net/analyses/10568125.xml</url>
+      <project_id>603955</project_id>
+      <updated_at>2012-10-07T00:38:54Z</updated_at>
+      <logged_at>2012-10-07T00:38:27Z</logged_at>
+      <min_month>2012-07-01T00:00:00Z</min_month>
+      <max_month>2012-10-01T00:00:00Z</max_month>
+      <twelve_month_contributor_count>1</twelve_month_contributor_count>
+      <total_code_lines>1160</total_code_lines>
+      <factoids>
+        <factoid type="FactoidAgeYoung">
+Short source control history        </factoid>
+        <factoid type="FactoidCommentsLow">
+Few source code comments        </factoid>
+        <factoid type="FactoidTeamSizeOne">
+Only a single active developer        </factoid>
+      </factoids>
+      <languages graph_url="http://www.ohloh.net/p/ohloh-hs/analyses/10568125/languages.png">
+        <language percentage="98" color="007B7C" id="38">
+Haskell        </language>
+        <language percentage="2" color="555555" id="3">
+XML        </language>
+      </languages>
+      <main_language_id>38</main_language_id>
+      <main_language_name>Haskell</main_language_name>
+    </analysis>
+  </result>
+</response>
