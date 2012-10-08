@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <status>success</status>
+  <items_returned>4</items_returned>
+  <items_available>4</items_available>
+  <first_item_position>0</first_item_position>
+  <result>
+    <factoid>
+      <id>30589578</id>
+      <analysis_id>10568125</analysis_id>
+      <type>FactoidAgeYoung</type>
+      <description>Short source control history</description>
+      <severity>-1</severity>
+    </factoid>
+    <factoid>
+      <id>30589577</id>
+      <analysis_id>10568125</analysis_id>
+      <type>FactoidCommentsLow</type>
+      <description>Few source code comments</description>
+      <severity>-1</severity>
+    </factoid>
+    <factoid>
+      <id>30589576</id>
+      <analysis_id>10568125</analysis_id>
+      <type>FactoidDistributionOnePerson</type>
+      <description>#&lt;FactoidDistributionOnePerson:0x2b13ca3f70b0&gt;</description>
+      <severity>-1</severity>
+    </factoid>
+    <factoid>
+      <id>30589579</id>
+      <analysis_id>10568125</analysis_id>
+      <type>FactoidTeamSizeOne</type>
+      <description>Only a single active developer</description>
+      <severity>-2</severity>
+    </factoid>
+  </result>
+</response>

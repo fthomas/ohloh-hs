@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <status>success</status>
+  <items_returned>1</items_returned>
+  <items_available>1</items_available>
+  <first_item_position>0</first_item_position>
+  <result>
+    <contributor_fact>
+      <contributor_id>2593966973311120</contributor_id>
+      <account_id>55440</account_id>
+      <account_name>Frank S. Thomas</account_name>
+      <analysis_id>10568125</analysis_id>
+      <contributor_name>Frank S. Thomas</contributor_name>
+      <primary_language_id>38</primary_language_id>
+      <primary_language_nice_name>Haskell</primary_language_nice_name>
+      <comment_ratio>0.092058674759737</comment_ratio>
+      <first_commit_time>2012-07-25T05:05:30Z</first_commit_time>
+      <last_commit_time>2012-10-05T05:34:47Z</last_commit_time>
+      <man_months>4</man_months>
+      <commits>70</commits>
+      <median_commits>16</median_commits>
+    </contributor_fact>
+  </result>
+</response>
