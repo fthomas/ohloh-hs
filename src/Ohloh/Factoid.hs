@@ -19,17 +19,20 @@ import Ohloh.Lens.IdL
 
 data FactoidType =
   FactoidActivityDecreasing |
+  FactoidActivityStable     |
   FactoidActivityIncreasing |
   FactoidAgeYoung           |
   FactoidAgeOld             |
   FactoidAgeVeryOld         |
   FactoidCommentsVeryLow    |
   FactoidCommentsLow        |
+  FactoidCommentsAverage    |
   FactoidCommentsHigh       |
   FactoidCommentsVeryHigh   |
   FactoidTeamSizeZero       |
   FactoidTeamSizeOne        |
   FactoidTeamSizeSmall      |
+  FactoidTeamSizeAverage    |
   FactoidTeamSizeLarge      |
   FactoidTeamSizeVeryLarge  |
   FactoidGplConflict

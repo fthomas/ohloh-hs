@@ -7,13 +7,13 @@
       <name>haskell</name>
       <nice_name>Haskell</nice_name>
       <category>code</category>
-      <code>4798072</code>
-      <comments>1014954</comments>
-      <blanks>952451</blanks>
-      <comment_ratio>0.17459994157948</comment_ratio>
+      <code>4798198</code>
+      <comments>1014962</comments>
+      <blanks>952487</blanks>
+      <comment_ratio>0.174597293038554</comment_ratio>
       <projects>2138</projects>
       <contributors>3619</contributors>
-      <commits>205858</commits>
+      <commits>205872</commits>
     </language>
   </result>
 </response>
