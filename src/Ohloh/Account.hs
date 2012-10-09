@@ -22,6 +22,8 @@ import Ohloh.Lens.UpdatedAtL
 data Account = Account {
   accId :: String,
   accName :: String,
+  accAbout :: Maybe String,
+  accLogin :: String,
   accCreatedAt :: String,
   accUpdatedAt :: String,
   accHomepageUrl :: Maybe String,
@@ -44,11 +46,13 @@ instance ShowXmlString Account
 xpAccount :: PU Account
 xpAccount =
   xpElem "account" $
-    xpWrap (uncurry13 Account,
-            \(Account i  n  ca  ua  hu  au  es  pc  l  cc  la  lo  ks) ->
-                     (i, n, ca, ua, hu, au, es, pc, l, cc, la, lo, ks)) $
-    xp13Tuple (xpElem "id" xpText0)
+    xpWrap (uncurry15 Account,
+            \(Account i  n  a  log  ca  ua  hu  au  es  pc  l  cc  la  lo  ks) ->
+                     (i, n, a, log, ca, ua, hu, au, es, pc, l, cc, la, lo, ks)) $
+    xp15Tuple (xpElem "id" xpText0)
               (xpElem "name" xpText0)
+              (xpOption (xpElem "about" xpText0))
+              (xpElem "login" xpText0)
               (xpElem "created_at" xpText0)
               (xpElem "updated_at" xpText0)
               (xpOption (xpElem "homepage_url" xpText0))

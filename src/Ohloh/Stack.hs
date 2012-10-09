@@ -21,6 +21,8 @@ import Ohloh.StackEntry
 
 data Stack = Stack {
   staId :: String,
+  staTitle :: String,
+  staDescription :: String,
   staUpdatedAt :: String,
   staProjectCount :: Int,
   staStackEntries :: [StackEntry],
@@ -37,10 +39,12 @@ instance ShowXmlString Stack
 xpStack :: PU Stack
 xpStack =
   xpElem "stack" $
-    xpWrap (uncurry6 Stack,
-            \(Stack i  ua  pc  se  ai  a) ->
-                   (i, ua, pc, se, ai, a)) $
-    xp6Tuple (xpElem "id" xpText0)
+    xpWrap (uncurry8 Stack,
+            \(Stack i  t  d  ua  pc  se  ai  a) ->
+                   (i, t, d, ua, pc, se, ai, a)) $
+    xp8Tuple (xpElem "id" xpText0)
+             (xpElem "title" xpText0)
+             (xpElem "description" xpText0)
              (xpElem "updated_at" xpText0)
              (xpElem "project_count" xpInt)
              (xpElem "stack_entries" (xpList xpickle))

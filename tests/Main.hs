@@ -77,20 +77,22 @@ xmlTextGen = (listOf . elements) legalXmlCharsSubset
 
 instance Arbitrary Account where
   arbitrary = do
-    i  <- xmlTextGen
-    n  <- xmlTextGen
-    ca <- xmlTextGen
-    ua <- xmlTextGen
-    hu <- xmlTextGen
-    au <- xmlTextGen
-    es <- xmlTextGen
-    pc <- arbitrary
-    l  <- xmlTextGen
-    cc <- xmlTextGen
-    la <- xmlTextGen
-    lo <- xmlTextGen
-    ks <- arbitrary
-    return (Account i n ca ua (Just hu) au es pc (Just l) (Just cc) (Just la) (Just lo) ks)
+    i   <- xmlTextGen
+    n   <- xmlTextGen
+    a   <- xmlTextGen
+    log <- xmlTextGen
+    ca  <- xmlTextGen
+    ua  <- xmlTextGen
+    hu  <- xmlTextGen
+    au  <- xmlTextGen
+    es  <- xmlTextGen
+    pc  <- arbitrary
+    l   <- xmlTextGen
+    cc  <- xmlTextGen
+    la  <- xmlTextGen
+    lo  <- xmlTextGen
+    ks  <- arbitrary
+    return (Account i n (Just a) log ca ua (Just hu) au es pc (Just l) (Just cc) (Just la) (Just lo) ks)
 
 instance Arbitrary ActivityFact where
   arbitrary = do
@@ -121,11 +123,11 @@ instance Arbitrary Analysis where
 
 instance Arbitrary ContributorFact where
   arbitrary = do
-    ai   <- xmlTextGen
     ci   <- xmlTextGen
-    cn   <- xmlTextGen
     aci  <- xmlTextGen
     acn  <- xmlTextGen
+    ai   <- xmlTextGen
+    cn   <- xmlTextGen
     pli  <- xmlTextGen
     plnn <- xmlTextGen
     cr   <- arbitrary
@@ -135,7 +137,7 @@ instance Arbitrary ContributorFact where
     c    <- arbitrary
     mc   <- arbitrary
     clf  <- arbitrary
-    return (ContributorFact ai ci cn (Just aci) (Just acn) pli plnn cr fct lct mm c mc clf)
+    return (ContributorFact ci (Just aci) (Just acn) ai cn pli plnn cr fct lct mm c mc clf)
 
 instance Arbitrary ContributorLanguageFact where
   arbitrary = do
@@ -278,18 +280,20 @@ instance Arbitrary SizeFact where
 instance Arbitrary Stack where
   arbitrary = do
     i  <- xmlTextGen
+    t  <- xmlTextGen
+    d  <- xmlTextGen
     ua <- xmlTextGen
     pc <- arbitrary
     se <- arbitrary
     ai <- xmlTextGen
     a  <- arbitrary
-    return (Stack i ua pc se ai (Just a))
+    return (Stack i t d ua pc se ai (Just a))
 
 instance Arbitrary StackEntry where
   arbitrary = do
     i  <- xmlTextGen
-    ca <- xmlTextGen
     si <- xmlTextGen
     pi <- xmlTextGen
+    ca <- xmlTextGen
     p  <- arbitrary
-    return (StackEntry i ca si pi (Just p))
+    return (StackEntry i si pi ca (Just p))

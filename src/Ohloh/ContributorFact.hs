@@ -16,11 +16,11 @@ import Ohloh.Common
 import Ohloh.ContributorLanguageFact
 
 data ContributorFact = ContributorFact {
-  cfAnalysisId :: String,
   cfContributorId :: String,
-  cfContributorName :: String,
   cfAccountId :: Maybe String,
   cfAccountName :: Maybe String,
+  cfAnalysisId :: String,
+  cfContributorName :: String,
   cfPrimaryLanguageId :: String,
   cfPrimaryLanguageNiceName :: String,
   cfCommentRatio :: Double,
@@ -29,7 +29,7 @@ data ContributorFact = ContributorFact {
   cfManMonths :: Int,
   cfCommits :: Int,
   cfMedianCommits :: Int,
-  cfContributorLanguageFacts :: [ContributorLanguageFact]
+  cfContributorLanguageFacts :: Maybe [ContributorLanguageFact]
 } deriving (Eq, Read, Show)
 
 instance XmlPickler ContributorFact where
@@ -42,13 +42,13 @@ xpContributorFact :: PU ContributorFact
 xpContributorFact =
   xpElem "contributor_fact" $
     xpWrap (uncurry14 ContributorFact,
-            \(ContributorFact ai  ci  cn  aci  acn  pli  plnn  cr  fct  lct  mm  c  mc  clf) ->
-                             (ai, ci, cn, aci, acn, pli, plnn, cr, fct, lct, mm, c, mc, clf)) $
-    xp14Tuple (xpElem "analysis_id" xpText0)
-              (xpElem "contributor_id" xpText0)
-              (xpElem "contributor_name" xpText0)
+            \(ContributorFact ci  aci  acn  ai  cn  pli  plnn  cr  fct  lct  mm  c  mc  clf) ->
+                             (ci, aci, acn, ai, cn, pli, plnn, cr, fct, lct, mm, c, mc, clf)) $
+    xp14Tuple (xpElem "contributor_id" xpText0)
               (xpOption (xpElem "account_id" xpText0))
               (xpOption (xpElem "account_name" xpText0))
+              (xpElem "analysis_id" xpText0)
+              (xpElem "contributor_name" xpText0)
               (xpElem "primary_language_id" xpText0)
               (xpElem "primary_language_nice_name" xpText0)
               (xpElem "comment_ratio" xpPrim)
@@ -57,4 +57,4 @@ xpContributorFact =
               (xpElem "man_months" xpInt)
               (xpElem "commits" xpInt)
               (xpElem "median_commits" xpInt)
-              (xpElem "contributor_language_facts" xpickle)
+              (xpOption (xpElem "contributor_language_facts" xpickle))

@@ -18,23 +18,24 @@ import Ohloh.Common
 import Ohloh.Lens.IdL
 
 data FactoidType =
-  FactoidActivityDecreasing |
-  FactoidActivityStable     |
-  FactoidActivityIncreasing |
-  FactoidAgeYoung           |
-  FactoidAgeOld             |
-  FactoidAgeVeryOld         |
-  FactoidCommentsVeryLow    |
-  FactoidCommentsLow        |
-  FactoidCommentsAverage    |
-  FactoidCommentsHigh       |
-  FactoidCommentsVeryHigh   |
-  FactoidTeamSizeZero       |
-  FactoidTeamSizeOne        |
-  FactoidTeamSizeSmall      |
-  FactoidTeamSizeAverage    |
-  FactoidTeamSizeLarge      |
-  FactoidTeamSizeVeryLarge  |
+  FactoidActivityDecreasing    |
+  FactoidActivityStable        |
+  FactoidActivityIncreasing    |
+  FactoidAgeYoung              |
+  FactoidAgeOld                |
+  FactoidAgeVeryOld            |
+  FactoidCommentsVeryLow       |
+  FactoidCommentsLow           |
+  FactoidCommentsAverage       |
+  FactoidCommentsHigh          |
+  FactoidCommentsVeryHigh      |
+  FactoidDistributionOnePerson |
+  FactoidTeamSizeZero          |
+  FactoidTeamSizeOne           |
+  FactoidTeamSizeSmall         |
+  FactoidTeamSizeAverage       |
+  FactoidTeamSizeLarge         |
+  FactoidTeamSizeVeryLarge     |
   FactoidGplConflict
   deriving (Eq, Read, Show)
 
