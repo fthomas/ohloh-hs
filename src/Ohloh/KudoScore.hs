@@ -15,11 +15,11 @@ import Text.XML.HXT.Arrow.Pickle
 import Ohloh.Common
 
 data KudoScore = KudoScore {
-  ksCreatedAt :: String,
+  ksCreatedAt :: Maybe String,
   ksKudoRank :: Int,
   ksPosition :: Int,
-  ksMaxPosition :: Int,
-  ksPositionDelta :: Int
+  ksMaxPosition :: Maybe Int,
+  ksPositionDelta :: Maybe Int
 } deriving (Eq, Read, Show)
 
 instance XmlPickler KudoScore where
@@ -34,8 +34,8 @@ xpKudoScore =
     xpWrap (uncurry5 KudoScore,
             \(KudoScore ca  kr  p  mp  pd) ->
                        (ca, kr, p, mp, pd)) $
-    xp5Tuple (xpElem "created_at" xpText0)
+    xp5Tuple (xpOption (xpElem "created_at" xpText0))
              (xpElem "kudo_rank" xpInt)
              (xpElem "position" xpInt)
-             (xpElem "max_position" xpInt)
-             (xpElem "position_delta" xpInt)
+             (xpOption (xpElem "max_position" xpInt))
+             (xpOption (xpElem "position_delta" xpInt))

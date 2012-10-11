@@ -84,6 +84,9 @@ instance Arbitrary Account where
     ca  <- xmlTextGen
     ua  <- xmlTextGen
     hu  <- xmlTextGen
+    ta  <- xmlTextGen
+    u   <- xmlTextGen
+    htu <- xmlTextGen
     au  <- xmlTextGen
     es  <- xmlTextGen
     pc  <- arbitrary
@@ -92,7 +95,7 @@ instance Arbitrary Account where
     la  <- xmlTextGen
     lo  <- xmlTextGen
     ks  <- arbitrary
-    return (Account i n (Just a) log ca ua (Just hu) au es pc (Just l) (Just cc) (Just la) (Just lo) ks)
+    return (Account i n (Just a) log ca ua (Just hu) (Just ta) u htu au es pc (Just l) (Just cc) (Just la) (Just lo) ks)
 
 instance Arbitrary ActivityFact where
   arbitrary = do
@@ -208,7 +211,7 @@ instance Arbitrary KudoScore where
     p  <- arbitrary
     mp <- arbitrary
     pd <- arbitrary
-    return (KudoScore ca kr p mp pd)
+    return (KudoScore (Just ca) kr p mp pd)
 
 instance Arbitrary Language where
   arbitrary = do
@@ -228,6 +231,8 @@ instance Arbitrary Language where
 instance Arbitrary Project where
   arbitrary = do
     i   <- xmlTextGen
+    u   <- xmlTextGen
+    htu <- xmlTextGen
     n   <- xmlTextGen
     ca  <- xmlTextGen
     ua  <- xmlTextGen
@@ -237,12 +242,12 @@ instance Arbitrary Project where
     un  <- xmlTextGen
     mlu <- xmlTextGen
     slu <- xmlTextGen
-    sc  <- arbitrary
-    ar  <- arbitrary
+    uc  <- arbitrary
+    ar  <- xmlTextGen
     rc  <- arbitrary
     ai  <- xmlTextGen
     a   <- arbitrary
-    return (Project i n ca ua (Just d) (Just hu) (Just du) un mlu slu sc ar rc ai a)
+    return (Project i n u htu ca ua (Just d) (Just hu) (Just du) un mlu slu uc ar rc ai a)
 
 instance Arbitrary RepositoryType where
   arbitrary =

@@ -22,6 +22,8 @@ import Ohloh.Lens.UpdatedAtL
 data Project = Project {
   projId :: String,
   projName :: String,
+  projUrl :: String,
+  projHtmlUrl :: String,
   projCreatedAt :: String,
   projUpdatedAt :: String,
   projDescription :: Maybe String,
@@ -30,8 +32,8 @@ data Project = Project {
   projUrlName :: String,
   projMediumLogoUrl :: String,
   projSmallLogoUrl :: String,
-  projStackCount :: Int,
-  projAverageRating :: Double,
+  projUserCount :: Int,
+  projAverageRating :: String,
   projRatingCount :: Int,
   projAnalysisId :: String,
   projAnalysis :: Analysis
@@ -46,11 +48,13 @@ instance ShowXmlString Project
 xpProject :: PU Project
 xpProject =
   xpElem "project" $
-    xpWrap (uncurry15 Project,
-            \(Project i  n  ca  ua  d  hu  du  un  mlu  slu  sc  ar  rc  ai  a) ->
-                     (i, n, ca, ua, d, hu, du, un, mlu, slu, sc, ar, rc, ai, a)) $
-    xp15Tuple (xpElem "id" xpText0)
+    xpWrap (uncurry17 Project,
+            \(Project i  n  u  htu  ca  ua  d  hu  du  un  mlu  slu  uc  ar  rc  ai  a) ->
+                     (i, n, u, htu, ca, ua, d, hu, du, un, mlu, slu, uc, ar, rc, ai, a)) $
+    xp17Tuple (xpElem "id" xpText0)
               (xpElem "name" xpText0)
+              (xpElem "url" xpText0)
+              (xpElem "html_url" xpText0)
               (xpElem "created_at" xpText0)
               (xpElem "updated_at" xpText0)
               (xpOption (xpElem "description" xpText0))
@@ -59,8 +63,8 @@ xpProject =
               (xpElem "url_name" xpText0)
               (xpElem "medium_logo_url" xpText0)
               (xpElem "small_logo_url" xpText0)
-              (xpElem "stack_count" xpInt)
-              (xpElem "average_rating" xpPrim)
+              (xpElem "user_count" xpInt)
+              (xpElem "average_rating" xpText0)
               (xpElem "rating_count" xpInt)
               (xpElem "analysis_id" xpText0)
               xpAnalysis
