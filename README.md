@@ -14,9 +14,9 @@ To build ohloh-hs' tests and tools, run these command in its source tree:
     cabal configure --enable-tests
     cabal build
 
-If the build succeeded, the `cmdoh` tool for example can be called via:
+If the build succeeded, you can for example run the `cmdoh` tool:
 
-    ./dist/build/cmdoh/cmdoh
+    dist/build/cmdoh/cmdoh --help
 
 Examples
 --------
