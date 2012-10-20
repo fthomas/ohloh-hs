@@ -4,7 +4,7 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
--- | <http://meta.ohloh.net/referencesize_fact/>
+-- | Ohloh API Reference: <http://meta.ohloh.net/referencesize_fact/>
 module Ohloh.SizeFact (
   SizeFact(..),
   xpSizeFact

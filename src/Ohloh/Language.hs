@@ -4,7 +4,7 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
--- | <http://meta.ohloh.net/referencelanguage/>
+-- | Ohloh API Reference: <http://meta.ohloh.net/referencelanguage/>
 module Ohloh.Language (
   Language(..),
   xpLanguage

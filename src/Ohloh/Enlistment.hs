@@ -4,7 +4,7 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
--- | <http://meta.ohloh.net/referenceenlistment/>
+-- | Ohloh API Reference: <http://meta.ohloh.net/referenceenlistment/>
 module Ohloh.Enlistment (
   Enlistment(..),
   xpEnlistment
