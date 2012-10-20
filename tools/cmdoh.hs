@@ -14,7 +14,7 @@ import Text.Show.Pretty
 import Text.XML.HXT.Core
 import Text.XML.HXT.Curl
 
-import Ohloh
+import Web.Ohloh
 
 data CmdOh = Read {file :: Maybe FilePath}
            | Fetch {key :: String, queryItem :: String, queryArgs :: [String]}

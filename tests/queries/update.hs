@@ -2,7 +2,7 @@ import qualified Data.ByteString as BS
 import Network.Curl.Download
 import Text.XML.HXT.Core
 
-import Ohloh
+import Web.Ohloh
 
 key = ""
 

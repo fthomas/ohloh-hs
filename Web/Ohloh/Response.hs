@@ -4,15 +4,15 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-module Ohloh.Response (
+module Web.Ohloh.Response (
   Response(..),
   xpResponse
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.ResultType
+import Web.Ohloh.Common
+import Web.Ohloh.ResultType
 
 data Response = Response {
   respStatus :: String,

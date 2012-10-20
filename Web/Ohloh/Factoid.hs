@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencefactoid/>
-module Ohloh.Factoid (
+module Web.Ohloh.Factoid (
   Factoid(..),
   FactoidType(..),
   xpFactoid
@@ -14,8 +14,8 @@ module Ohloh.Factoid (
 import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.Lens.IdL
+import Web.Ohloh.Common
+import Web.Ohloh.Lens.IdL
 
 data FactoidType =
   FactoidActivityDecreasing    |

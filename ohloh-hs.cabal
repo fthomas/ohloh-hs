@@ -17,28 +17,27 @@ source-repository head
   location:         https://github.com/fthomas/ohloh-hs
 
 library
-  exposed-modules:  Ohloh
-                    Ohloh.Account
-                    Ohloh.ActivityFact
-                    Ohloh.Analysis
-                    Ohloh.ContributorFact
-                    Ohloh.ContributorLanguageFact
-                    Ohloh.Enlistment
-                    Ohloh.Factoid
-                    Ohloh.Kudo
-                    Ohloh.KudoScore
-                    Ohloh.Language
-                    Ohloh.Lens.IdL
-                    Ohloh.Lens.NameL
-                    Ohloh.Lens.UpdatedAtL
-                    Ohloh.Project
-                    Ohloh.Repository
-                    Ohloh.Response
-                    Ohloh.ResultType
-                    Ohloh.SizeFact
-                    Ohloh.Stack
-                    Ohloh.StackEntry
-  hs-source-dirs:   src
+  exposed-modules:  Web.Ohloh
+                    Web.Ohloh.Account
+                    Web.Ohloh.ActivityFact
+                    Web.Ohloh.Analysis
+                    Web.Ohloh.ContributorFact
+                    Web.Ohloh.ContributorLanguageFact
+                    Web.Ohloh.Enlistment
+                    Web.Ohloh.Factoid
+                    Web.Ohloh.Kudo
+                    Web.Ohloh.KudoScore
+                    Web.Ohloh.Language
+                    Web.Ohloh.Lens.IdL
+                    Web.Ohloh.Lens.NameL
+                    Web.Ohloh.Lens.UpdatedAtL
+                    Web.Ohloh.Project
+                    Web.Ohloh.Repository
+                    Web.Ohloh.Response
+                    Web.Ohloh.ResultType
+                    Web.Ohloh.SizeFact
+                    Web.Ohloh.Stack
+                    Web.Ohloh.StackEntry
   build-depends:    base >= 4 && < 5,
                     data-lens,
                     hxt,
@@ -46,7 +45,7 @@ library
 
 executable cmdoh
   main-is:          cmdoh.hs
-  hs-source-dirs:   src, tools
+  hs-source-dirs:   . tools
   ghc-options:      -Wall
                     -fno-warn-missing-signatures
                     -fno-warn-name-shadowing
@@ -60,7 +59,7 @@ executable cmdoh
 
 executable fetch-haskell
   main-is:          fetch-haskell.hs
-  hs-source-dirs:   src, tests
+  hs-source-dirs:   . tests
   ghc-options:      -Wall
                     -fno-warn-missing-signatures
                     -fno-warn-name-shadowing
@@ -73,7 +72,7 @@ executable fetch-haskell
 
 executable read-haskell
   main-is:          read-haskell.hs
-  hs-source-dirs:   src, tests
+  hs-source-dirs:   . tests
   ghc-options:      -Wall
                     -fno-warn-missing-signatures
                     -fno-warn-name-shadowing
@@ -85,7 +84,7 @@ executable read-haskell
 
 executable update-queries
   main-is:          update.hs
-  hs-source-dirs:   src, tests/queries
+  hs-source-dirs:   . tests/queries
   ghc-options:      -Wall
                     -fno-warn-missing-signatures
                     -fno-warn-name-shadowing
@@ -99,7 +98,7 @@ executable update-queries
 test-suite tests
   type:             exitcode-stdio-1.0     
   main-is:          Main.hs
-  hs-source-dirs:   src, tests
+  hs-source-dirs:   tests
   ghc-options:      -Wall
                     -fno-warn-name-shadowing
   build-depends:    base >= 4 && < 5,

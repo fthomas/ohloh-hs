@@ -13,7 +13,7 @@ import Test.Framework.Providers.QuickCheck2 (testProperty)
 
 import Text.XML.HXT.Core
 
-import Ohloh
+import Web.Ohloh
 
 main :: IO ()
 main = defaultMain tests

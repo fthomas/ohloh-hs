@@ -5,14 +5,14 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referenceactivity_fact/>
-module Ohloh.ActivityFact (
+module Web.Ohloh.ActivityFact (
   ActivityFact(..),
   xpActivityFact
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
+import Web.Ohloh.Common
 
 data ActivityFact = ActivityFact {
   afMonth :: String,

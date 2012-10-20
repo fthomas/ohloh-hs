@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Common operations for 'Ohloh' types and convenience functions.
-module Ohloh.Common where
+module Web.Ohloh.Common where
 
 import Text.Format
 import Text.XML.HXT.Core

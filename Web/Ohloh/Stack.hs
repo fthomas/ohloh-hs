@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencestack/>
-module Ohloh.Stack (
+module Web.Ohloh.Stack (
   Stack(..),
   xpStack
 ) where
@@ -13,11 +13,11 @@ module Ohloh.Stack (
 import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Account
-import Ohloh.Common
-import Ohloh.Lens.IdL
-import Ohloh.Lens.UpdatedAtL
-import Ohloh.StackEntry
+import Web.Ohloh.Account
+import Web.Ohloh.Common
+import Web.Ohloh.Lens.IdL
+import Web.Ohloh.Lens.UpdatedAtL
+import Web.Ohloh.StackEntry
 
 data Stack = Stack {
   staId :: String,

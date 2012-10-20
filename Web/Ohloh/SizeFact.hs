@@ -5,14 +5,14 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencesize_fact/>
-module Ohloh.SizeFact (
+module Web.Ohloh.SizeFact (
   SizeFact(..),
   xpSizeFact
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
+import Web.Ohloh.Common
 
 data SizeFact = SizeFact {
   sfMonth :: String,

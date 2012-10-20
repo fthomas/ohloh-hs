@@ -4,9 +4,9 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-module Ohloh.Lens.IdL where
+module Web.Ohloh.Lens.UpdatedAtL where
 
 import Data.Lens.Common
 
-class IdL a where
-  idL :: Lens a String
+class UpdatedAtL a where
+  updatedAtL :: Lens a String

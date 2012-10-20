@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencerepository/>
-module Ohloh.Repository (
+module Web.Ohloh.Repository (
   Repository(..),
   RepositoryType(..),
   xpRepository
@@ -14,8 +14,8 @@ module Ohloh.Repository (
 import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.Lens.IdL
+import Web.Ohloh.Common
+import Web.Ohloh.Lens.IdL
 
 data RepositoryType =
   SvnRepository |

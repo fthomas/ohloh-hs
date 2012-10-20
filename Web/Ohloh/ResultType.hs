@@ -4,25 +4,25 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
-module Ohloh.ResultType (
+module Web.Ohloh.ResultType (
   ResultType(..),
   xpResultType
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Account
-import Ohloh.ActivityFact
-import Ohloh.Analysis
-import Ohloh.ContributorFact
-import Ohloh.ContributorLanguageFact
-import Ohloh.Enlistment
-import Ohloh.Factoid
-import Ohloh.Kudo
-import Ohloh.Language
-import Ohloh.Project
-import Ohloh.SizeFact
-import Ohloh.Stack
+import Web.Ohloh.Account
+import Web.Ohloh.ActivityFact
+import Web.Ohloh.Analysis
+import Web.Ohloh.ContributorFact
+import Web.Ohloh.ContributorLanguageFact
+import Web.Ohloh.Enlistment
+import Web.Ohloh.Factoid
+import Web.Ohloh.Kudo
+import Web.Ohloh.Language
+import Web.Ohloh.Project
+import Web.Ohloh.SizeFact
+import Web.Ohloh.Stack
 
 -- | ResultType is a simple sum type that can hold those types which can be part
 --   of the @\/response\/result@ element (see 'Ohloh.Response.respResult').

@@ -1,7 +1,7 @@
 import Text.Show.Pretty
 import Text.XML.HXT.Core
 
-import Ohloh
+import Web.Ohloh
 
 main = do
   res <- runX $ xunpickleDocument xpResponse [ withRemoveWS yes ] "read-haskell.xml"

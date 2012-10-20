@@ -5,14 +5,14 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencekudo/>
-module Ohloh.Kudo (
+module Web.Ohloh.Kudo (
   Kudo(..),
   xpKudo
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
+import Web.Ohloh.Common
 
 data Kudo = Kudo {
   kudoCreatedAt :: String,

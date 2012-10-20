@@ -5,14 +5,14 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencekudo_score/>
-module Ohloh.KudoScore (
+module Web.Ohloh.KudoScore (
   KudoScore(..),
   xpKudoScore
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
+import Web.Ohloh.Common
 
 data KudoScore = KudoScore {
   ksCreatedAt :: Maybe String,

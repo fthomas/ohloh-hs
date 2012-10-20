@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencelanguage/>
-module Ohloh.Language (
+module Web.Ohloh.Language (
   Language(..),
   xpLanguage
 ) where
@@ -13,9 +13,9 @@ module Ohloh.Language (
 import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.Lens.IdL
-import Ohloh.Lens.NameL
+import Web.Ohloh.Common
+import Web.Ohloh.Lens.IdL
+import Web.Ohloh.Lens.NameL
 
 data Language = Language {
   langId :: String,

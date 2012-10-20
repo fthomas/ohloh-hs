@@ -2,7 +2,7 @@ import Text.Show.Pretty
 import Text.XML.HXT.Core
 import Text.XML.HXT.Curl
 
-import Ohloh
+import Web.Ohloh
 
 -- Insert your API Key here:
 apiKey = ""

@@ -5,15 +5,15 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencecontributor_fact/>
-module Ohloh.ContributorFact (
+module Web.Ohloh.ContributorFact (
   ContributorFact(..),
   xpContributorFact
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.ContributorLanguageFact
+import Web.Ohloh.Common
+import Web.Ohloh.ContributorLanguageFact
 
 data ContributorFact = ContributorFact {
   cfContributorId :: String,

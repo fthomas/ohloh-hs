@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referenceanalysis/>
-module Ohloh.Analysis (
+module Web.Ohloh.Analysis (
   Analysis(..),
   xpAnalysis
 ) where
@@ -13,9 +13,9 @@ module Ohloh.Analysis (
 import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.Lens.IdL
-import Ohloh.Lens.UpdatedAtL
+import Web.Ohloh.Common
+import Web.Ohloh.Lens.IdL
+import Web.Ohloh.Lens.UpdatedAtL
 
 data Analysis = Analysis {
   anaId :: String,

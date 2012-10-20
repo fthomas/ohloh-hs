@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencestack_entry/>
-module Ohloh.StackEntry (
+module Web.Ohloh.StackEntry (
   StackEntry(..),
   xpStackEntry
 ) where
@@ -13,9 +13,9 @@ module Ohloh.StackEntry (
 import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.Lens.IdL
-import Ohloh.Project
+import Web.Ohloh.Common
+import Web.Ohloh.Lens.IdL
+import Web.Ohloh.Project
 
 data StackEntry = StackEntry {
   seId :: String,

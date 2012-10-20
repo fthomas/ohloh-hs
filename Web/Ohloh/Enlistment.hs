@@ -5,7 +5,7 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referenceenlistment/>
-module Ohloh.Enlistment (
+module Web.Ohloh.Enlistment (
   Enlistment(..),
   xpEnlistment
 ) where
@@ -13,9 +13,9 @@ module Ohloh.Enlistment (
 import Data.Lens.Common
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
-import Ohloh.Lens.IdL
-import Ohloh.Repository
+import Web.Ohloh.Common
+import Web.Ohloh.Lens.IdL
+import Web.Ohloh.Repository
 
 data Enlistment = Enlistment {
   enId :: String,

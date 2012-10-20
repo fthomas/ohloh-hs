@@ -5,14 +5,14 @@
 -- can be found in the LICENSE file.
 
 -- | Ohloh API Reference: <http://meta.ohloh.net/referencecontributor_language_fact/>
-module Ohloh.ContributorLanguageFact (
+module Web.Ohloh.ContributorLanguageFact (
   ContributorLanguageFact(..),
   xpContributorLanguageFact
 ) where
 
 import Text.XML.HXT.Arrow.Pickle
 
-import Ohloh.Common
+import Web.Ohloh.Common
 
 data ContributorLanguageFact = ContributorLanguageFact {
   clfAnalysisId :: String,
