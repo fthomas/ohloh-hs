@@ -24,6 +24,8 @@ import Ohloh.Project
 import Ohloh.SizeFact
 import Ohloh.Stack
 
+-- | ResultType is a simple sum type that can hold those types which can be part
+--   of the @\/response\/result@ element (see 'Ohloh.Response.respResult').
 data ResultType =
   AccountR Account |
   ActivityFactR ActivityFact |
