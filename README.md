@@ -24,3 +24,9 @@ Examples
     cmdoh fetch -k YOUR_API_KEY_HERE language haskell
 
     cmdoh read -f tests/queries/language.xml
+
+
+Author
+------
+
+ohloh-hs was written by Frank S. Thomas <frank@timepit.eu>

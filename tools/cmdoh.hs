@@ -20,12 +20,15 @@ data CmdOh = Read {file :: Maybe FilePath}
            | Fetch {key :: String, queryItem :: String, queryArgs :: [String]}
              deriving (Show, Data, Typeable)
 
-cmdRead = Read { file = def }
+cmdRead = Read {
+  file = def &= typ "FILE" &= help "Read data from FILE"
+}
 
 cmdFetch = Fetch {
-  key = def &= help "Ohloh API key",
+  key = def &= typ "KEY" &= help "Ohloh API key",
   queryItem = def &= argPos 0,
-  queryArgs = def &= args }
+  queryArgs = def &= args &= typ "ITEM_ARGS"
+}
 
 main :: IO ()
 main = do
