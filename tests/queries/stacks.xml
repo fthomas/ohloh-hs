@@ -2,7 +2,7 @@
 <response>
   <status>success</status>
   <items_returned>10</items_returned>
-  <items_available>212</items_available>
+  <items_available>213</items_available>
   <first_item_position>0</first_item_position>
   <result>
     <stack>
@@ -195,7 +195,7 @@
         <longitude>30.26287078857422</longitude>
         <kudo_score>
           <kudo_rank>1</kudo_rank>
-          <position>448552</position>
+          <position>461582</position>
         </kudo_score>
       </account>
     </stack>
@@ -2471,7 +2471,7 @@
         <longitude></longitude>
         <kudo_score>
           <kudo_rank>8</kudo_rank>
-          <position>11260</position>
+          <position>11261</position>
         </kudo_score>
       </account>
     </stack>
@@ -2563,7 +2563,7 @@
         <longitude></longitude>
         <kudo_score>
           <kudo_rank>1</kudo_rank>
-          <position>490185</position>
+          <position>503210</position>
         </kudo_score>
       </account>
     </stack>
@@ -2707,7 +2707,7 @@
         <name>aCiD2</name>
         <login>aCiD2</login>
         <created_at>2008-10-27T19:13:35Z</created_at>
-        <updated_at>2012-10-08T13:37:07Z</updated_at>
+        <updated_at>2012-10-20T06:29:12Z</updated_at>
         <homepage_url>http://acidcycles.wordpress.net</homepage_url>
         <twitter_account></twitter_account>
         <url>http://www.ohloh.net/accounts/aCiD2.xml</url>
@@ -2721,7 +2721,7 @@
         <longitude>-0.1276831</longitude>
         <kudo_score>
           <kudo_rank>9</kudo_rank>
-          <position>6943</position>
+          <position>6925</position>
         </kudo_score>
       </account>
     </stack>
@@ -2987,7 +2987,7 @@
         <longitude>-122.670399</longitude>
         <kudo_score>
           <kudo_rank>5</kudo_rank>
-          <position>205902</position>
+          <position>207446</position>
         </kudo_score>
       </account>
     </stack>
@@ -3185,7 +3185,7 @@
         <name>Adrian Pop</name>
         <login>adrpo</login>
         <created_at>2007-02-21T06:35:19Z</created_at>
-        <updated_at>2012-06-25T22:53:31Z</updated_at>
+        <updated_at>2012-10-19T03:20:03Z</updated_at>
         <homepage_url>http://www.ida.liu.se/~adrpo</homepage_url>
         <twitter_account></twitter_account>
         <url>http://www.ohloh.net/accounts/adrpo.xml</url>
@@ -3199,7 +3199,7 @@
         <longitude>18.0644881</longitude>
         <kudo_score>
           <kudo_rank>8</kudo_rank>
-          <position>28690</position>
+          <position>29770</position>
         </kudo_score>
       </account>
     </stack>
@@ -3591,7 +3591,7 @@
         <longitude></longitude>
         <kudo_score>
           <kudo_rank>1</kudo_rank>
-          <position>448980</position>
+          <position>462010</position>
         </kudo_score>
       </account>
     </stack>
@@ -3725,7 +3725,7 @@
         <longitude></longitude>
         <kudo_score>
           <kudo_rank>1</kudo_rank>
-          <position>473005</position>
+          <position>486033</position>
         </kudo_score>
       </account>
     </stack>
@@ -4429,7 +4429,7 @@
         <longitude></longitude>
         <kudo_score>
           <kudo_rank>6</kudo_rank>
-          <position>107783</position>
+          <position>108291</position>
         </kudo_score>
       </account>
     </stack>
@@ -5119,7 +5119,7 @@
         <name>Alexey Zakhlestin</name>
         <login>indeyets</login>
         <created_at>2007-07-23T12:55:38Z</created_at>
-        <updated_at>2012-10-08T21:43:29Z</updated_at>
+        <updated_at>2012-10-20T03:48:08Z</updated_at>
         <homepage_url>http://blog.milkfarmsoft.com/</homepage_url>
         <twitter_account></twitter_account>
         <url>http://www.ohloh.net/accounts/indeyets.xml</url>
@@ -5133,7 +5133,7 @@
         <longitude>30.30801773071289</longitude>
         <kudo_score>
           <kudo_rank>9</kudo_rank>
-          <position>6558</position>
+          <position>6549</position>
         </kudo_score>
       </account>
     </stack>

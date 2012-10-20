@@ -34,12 +34,12 @@
     </size_fact>
     <size_fact>
       <month>2012-10-01T00:00:00Z</month>
-      <code>1160</code>
+      <code>6897</code>
       <comments>139</comments>
-      <blanks>208</blanks>
-      <comment_ratio>0.107005388760585</comment_ratio>
-      <commits>64</commits>
-      <man_months>7</man_months>
+      <blanks>219</blanks>
+      <comment_ratio>0.0197555429221148</comment_ratio>
+      <commits>74</commits>
+      <man_months>8</man_months>
     </size_fact>
   </result>
 </response>

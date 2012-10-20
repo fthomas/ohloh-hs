@@ -12,11 +12,11 @@
       <repository>
         <id>490444</id>
         <type>GitRepository</type>
-        <url>https://github.com/fthomas/ohloh-hs.git</url>
+        <url>git://github.com/fthomas/ohloh-hs.git</url>
         <username></username>
         <password></password>
-        <logged_at>2012-10-07T00:38:27Z</logged_at>
-        <commits>70</commits>
+        <logged_at>2012-10-19T22:33:32Z</logged_at>
+        <commits>77</commits>
         <ohloh_job_status>success</ohloh_job_status>
       </repository>
     </enlistment>

@@ -40,13 +40,13 @@
     </activity_fact>
     <activity_fact>
       <month>2012-10-01T00:00:00Z</month>
-      <code_added>50</code_added>
-      <code_removed>14</code_removed>
+      <code_added>5889</code_added>
+      <code_removed>116</code_removed>
       <comments_added>4</comments_added>
       <comments_removed>4</comments_removed>
-      <blanks_added>4</blanks_added>
-      <blanks_removed>0</blanks_removed>
-      <commits>4</commits>
+      <blanks_added>16</blanks_added>
+      <blanks_removed>1</blanks_removed>
+      <commits>14</commits>
       <contributors>1</contributors>
     </activity_fact>
   </result>
