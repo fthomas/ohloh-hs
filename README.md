@@ -29,4 +29,4 @@ Examples
 Author
 ------
 
-ohloh-hs was written by Frank S. Thomas <frank@timepit.eu>
+ohloh-hs was written by Frank S. Thomas <<frank@timepit.eu>>
