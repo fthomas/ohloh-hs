@@ -17,6 +17,8 @@ import Web.Ohloh.Common
 import Web.Ohloh.Lens.IdL
 import Web.Ohloh.Project
 
+-- | 'StackEntry' joins one 'Web.Ohloh.Stack.Stack' to one
+--   'Web.Ohloh.Project.Project'.
 data StackEntry = StackEntry {
   seId :: String,
   seStackId :: String,

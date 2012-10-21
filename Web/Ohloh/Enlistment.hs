@@ -17,6 +17,8 @@ import Web.Ohloh.Common
 import Web.Ohloh.Lens.IdL
 import Web.Ohloh.Repository
 
+-- | 'Enlistment' joins a 'Web.Ohloh.Project.Project' to a source control
+--   'Web.Ohloh.Repository.Repository'.
 data Enlistment = Enlistment {
   enId :: String,
   enProjectId :: String,

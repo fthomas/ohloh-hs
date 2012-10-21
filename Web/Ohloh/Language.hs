@@ -17,6 +17,8 @@ import Web.Ohloh.Common
 import Web.Ohloh.Lens.IdL
 import Web.Ohloh.Lens.NameL
 
+-- | 'Language' contains the name and various statistics related to a
+--   programming language.
 data Language = Language {
   langId :: String,
   langName :: String,

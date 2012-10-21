@@ -14,6 +14,9 @@ import Text.XML.HXT.Arrow.Pickle
 
 import Web.Ohloh.Common
 
+-- | 'ContributorLanguageFact' contains a selection of
+--   'Web.Ohloh.Language.Language'-specific statistics about a single person
+--   who commited source code to a 'Web.Ohloh.Project.Project'.
 data ContributorLanguageFact = ContributorLanguageFact {
   clfAnalysisId :: String,
   clfContributorId :: String,

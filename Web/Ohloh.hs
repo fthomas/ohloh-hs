@@ -4,7 +4,18 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
--- | Top-level module for the Ohloh API (<http://meta.ohloh.net/getting_started/>).
+-- |
+--   Module     : Web.Ohloh
+--   License    : BSD3
+--
+--   Maintainer : Frank S. Thomas <frank@timepit.eu>
+--   Stability  : experimental
+--   Portability: portable
+--
+-- Top-level module for the Ohloh API (<http://meta.ohloh.net/getting_started/>).
+-- Examples how to use this module can be found in the \"tests\/read-haskell.hs\",
+-- \"tests\/fetch-haskell.hs\", and \"tools\/cmdoh.hs\" files in ohloh-hs' source
+-- tree.
 module Web.Ohloh (module X) where
 import Web.Ohloh.Account as X
 import Web.Ohloh.ActivityFact as X

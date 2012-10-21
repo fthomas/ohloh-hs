@@ -19,6 +19,8 @@ import Web.Ohloh.Lens.IdL
 import Web.Ohloh.Lens.UpdatedAtL
 import Web.Ohloh.StackEntry
 
+-- | 'Stack' represents a collection of 'Web.Ohloh.Project.Project's used by
+--   a single person.
 data Stack = Stack {
   staId :: String,
   staTitle :: String,

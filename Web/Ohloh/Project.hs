@@ -19,6 +19,8 @@ import Web.Ohloh.Lens.IdL
 import Web.Ohloh.Lens.NameL
 import Web.Ohloh.Lens.UpdatedAtL
 
+-- | 'Project' represents a collection of source code, documentation, and web
+--   sites treated together as a unit.
 data Project = Project {
   projId :: String,
   projName :: String,

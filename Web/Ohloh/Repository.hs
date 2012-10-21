@@ -26,6 +26,7 @@ data RepositoryType =
   SvnSyncRepository
   deriving (Eq, Read, Show)
 
+-- | 'Repository' represents an individual source control repository.
 data Repository = Repository {
   repoId :: String,
   repoRepoType :: RepositoryType,

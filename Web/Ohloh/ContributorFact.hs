@@ -15,6 +15,8 @@ import Text.XML.HXT.Arrow.Pickle
 import Web.Ohloh.Common
 import Web.Ohloh.ContributorLanguageFact
 
+-- | 'ContributorFact' contains a selection of high-level statistics about a
+--   person who commited source code to a 'Web.Ohloh.Project.Project'.
 data ContributorFact = ContributorFact {
   cfContributorId :: String,
   cfAccountId :: Maybe String,

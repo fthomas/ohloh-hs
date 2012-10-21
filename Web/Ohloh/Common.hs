@@ -4,7 +4,7 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
--- | Common operations for 'Ohloh' types and convenience functions.
+-- | Common operations for "Web.Ohloh" types and convenience functions.
 module Web.Ohloh.Common where
 
 import Text.Format

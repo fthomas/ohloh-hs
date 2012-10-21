@@ -17,6 +17,8 @@ import Web.Ohloh.Common
 import Web.Ohloh.Lens.IdL
 import Web.Ohloh.Lens.UpdatedAtL
 
+-- | 'Analysis' is a pre-computed collection of statistics about
+--   'Web.Ohloh.Project.Project' source code and contributors.
 data Analysis = Analysis {
   anaId :: String,
   anaProjectId :: String,

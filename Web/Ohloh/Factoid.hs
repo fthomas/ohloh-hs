@@ -39,6 +39,8 @@ data FactoidType =
   FactoidGplConflict
   deriving (Eq, Read, Show)
 
+-- | 'Factoid' is a short, high-level bullet point delivering a simple
+--   observation about a 'Web.Ohloh.Project.Project'.
 data Factoid = Factoid {
   factId :: String,
   factAnalysisId :: String,

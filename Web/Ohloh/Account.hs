@@ -19,6 +19,7 @@ import Web.Ohloh.Lens.IdL
 import Web.Ohloh.Lens.NameL
 import Web.Ohloh.Lens.UpdatedAtL
 
+-- | 'Account' represents an Ohloh member.
 data Account = Account {
   accId :: String,
   accName :: String,

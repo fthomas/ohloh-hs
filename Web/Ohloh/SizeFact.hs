@@ -14,6 +14,8 @@ import Text.XML.HXT.Arrow.Pickle
 
 import Web.Ohloh.Common
 
+-- | 'SizeFact' is a pre-computed collection of statistics about
+--   'Web.Ohloh.Project.Project' source code.
 data SizeFact = SizeFact {
   sfMonth :: String,
   sfCode :: Int,

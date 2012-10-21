@@ -14,6 +14,8 @@ import Text.XML.HXT.Arrow.Pickle
 
 import Web.Ohloh.Common
 
+-- | 'Kudo' is a simple gesture of thanks, praise, or endorsement from an
+--   'Web.Ohloh.Account.Account' to another person.
 data Kudo = Kudo {
   kudoCreatedAt :: String,
   kudoSenderAccountId :: String,
