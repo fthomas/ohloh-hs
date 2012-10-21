@@ -4,6 +4,7 @@
 -- Use of this source code is governed by a BSD-style license that
 -- can be found in the LICENSE file.
 
+-- | Top-level module for the Ohloh API (<http://meta.ohloh.net/getting_started/>).
 module Web.Ohloh (module X) where
 import Web.Ohloh.Account as X
 import Web.Ohloh.ActivityFact as X

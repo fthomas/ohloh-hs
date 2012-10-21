@@ -3,11 +3,13 @@ version:            0.0.0
 synopsis:           Interface to the Ohloh API
 description:        <http://www.ohloh.net>
 homepage:           https://github.com/fthomas/ohloh-hs
+bug-reports:        https://github.com/fthomas/ohloh-hs/issues
 license:            BSD3
 license-file:       LICENSE
 author:             Frank S. Thomas <frank@timepit.eu>
 maintainer:         Frank S. Thomas <frank@timepit.eu>
 category:           Web
+stability:          experimental
 build-type:         Simple
 cabal-version:      >= 1.9.2
 extra-source-files: README.md TODO tests/read-haskell.xml
