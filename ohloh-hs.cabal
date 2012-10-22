@@ -2,10 +2,11 @@ name:               ohloh-hs
 version:            0.0.0
 synopsis:           Interface to the Ohloh API
 description:
-  ohloh-hs is an interface to the Ohloh API (<http://www.ohloh.net>), that
+  ohloh-hs is an interface to the Ohloh API (<http://www.ohloh.net>), which
   provides access to the data of the Ohloh open source directory. ohloh-hs
-  consists mainly of data types for the items exposed by the API and
-  corresponding "Text.XML.HXT.Arrow.Pickle" pickler functions.
+  consists mainly of simple data types for the items exposed by the API and
+  corresponding "Text.XML.HXT.Arrow.Pickle" pickler functions in order to
+  convert those types from\/to XML easily.
 
 homepage:           https://github.com/fthomas/ohloh-hs
 bug-reports:        https://github.com/fthomas/ohloh-hs/issues

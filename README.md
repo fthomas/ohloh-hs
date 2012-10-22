@@ -1,9 +1,13 @@
 ohloh-hs
 ========
 
-ohloh-hs is a Haskell Interface to the [Ohloh API][].
+ohloh-hs is a Haskell Interface to the [Ohloh API][], which provides access
+to the dataof the Ohloh open source directory. ohloh-hs consists mainly of
+simple data types for the items exposed by the API and corresponding [HXT][]
+pickler functions in order to convert those types from/to XML easily.
 
 [Ohloh API]: http://meta.ohloh.net/getting_started/
+[HXT]: http://www.fh-wedel.de/~si/HXmlToolbox/
 
 Building
 --------
