@@ -1,5 +1,5 @@
 name:               ohloh-hs
-version:            0.0.0
+version:            0.0.1
 synopsis:           Interface to the Ohloh API
 description:
   ohloh-hs is an interface to the Ohloh API (<http://www.ohloh.net>), which
@@ -65,43 +65,43 @@ executable cmdoh
                     pretty-show,
                     text-format-simple
 
-executable fetch-haskell
-  main-is:          fetch-haskell.hs
-  hs-source-dirs:   . tests
-  ghc-options:      -Wall
-                    -fno-warn-missing-signatures
-                    -fno-warn-name-shadowing
-  build-depends:    base >= 4 && < 5,
-                    data-lens,
-                    hxt,
-                    hxt-curl,
-                    pretty-show,
-                    text-format-simple
-
-executable read-haskell
-  main-is:          read-haskell.hs
-  hs-source-dirs:   . tests
-  ghc-options:      -Wall
-                    -fno-warn-missing-signatures
-                    -fno-warn-name-shadowing
-  build-depends:    base >= 4 && < 5,
-                    data-lens,
-                    hxt,
-                    pretty-show,
-                    text-format-simple
-
-executable update-queries
-  main-is:          update.hs
-  hs-source-dirs:   . tests/queries
-  ghc-options:      -Wall
-                    -fno-warn-missing-signatures
-                    -fno-warn-name-shadowing
-  build-depends:    base >= 4 && < 5,
-                    bytestring,
-                    data-lens,
-                    download-curl,
-                    hxt,
-                    text-format-simple
+--executable fetch-haskell
+--  main-is:          fetch-haskell.hs
+--  hs-source-dirs:   . tests
+--  ghc-options:      -Wall
+--                    -fno-warn-missing-signatures
+--                    -fno-warn-name-shadowing
+--  build-depends:    base >= 4 && < 5,
+--                    data-lens,
+--                    hxt,
+--                    hxt-curl,
+--                    pretty-show,
+--                    text-format-simple
+--
+--executable read-haskell
+--  main-is:          read-haskell.hs
+--  hs-source-dirs:   . tests
+--  ghc-options:      -Wall
+--                    -fno-warn-missing-signatures
+--                    -fno-warn-name-shadowing
+--  build-depends:    base >= 4 && < 5,
+--                    data-lens,
+--                    hxt,
+--                    pretty-show,
+--                    text-format-simple
+--
+--executable update-queries
+--  main-is:          update.hs
+--  hs-source-dirs:   . tests/queries
+--  ghc-options:      -Wall
+--                    -fno-warn-missing-signatures
+--                    -fno-warn-name-shadowing
+--  build-depends:    base >= 4 && < 5,
+--                    bytestring,
+--                    data-lens,
+--                    download-curl,
+--                    hxt,
+--                    text-format-simple
 
 test-suite tests
   type:             exitcode-stdio-1.0     

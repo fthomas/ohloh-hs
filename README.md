@@ -2,7 +2,7 @@ ohloh-hs
 ========
 
 ohloh-hs is a Haskell Interface to the [Ohloh API][], which provides access
-to the dataof the Ohloh open source directory. It consists mainly of simple
+to the data of the Ohloh open source directory. It consists mainly of simple
 data types for the items exposed by the API and corresponding [HXT][]
 pickler functions in order to convert those types from/to XML easily.
 
@@ -24,6 +24,8 @@ If the build succeeded, you can for example run the `cmdoh` tool:
 
 Examples
 --------
+
+Here are some example invocations of the `cmdoh` tool:
 
     cmdoh fetch -k YOUR_API_KEY_HERE language haskell
 
