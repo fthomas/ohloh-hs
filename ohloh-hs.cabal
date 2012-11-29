@@ -1,5 +1,5 @@
 name:               ohloh-hs
-version:            0.0.1
+version:            0.0.2
 synopsis:           Interface to the Ohloh API
 description:
   ohloh-hs is an interface to the Ohloh API (<http://www.ohloh.net>), which
@@ -29,6 +29,7 @@ library
                     Web.Ohloh.Account
                     Web.Ohloh.ActivityFact
                     Web.Ohloh.Analysis
+                    Web.Ohloh.Common
                     Web.Ohloh.ContributorFact
                     Web.Ohloh.ContributorLanguageFact
                     Web.Ohloh.Enlistment
