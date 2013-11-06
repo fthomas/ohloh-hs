@@ -110,7 +110,8 @@ test-suite tests
   hs-source-dirs:   tests
   ghc-options:      -Wall
                     -fno-warn-name-shadowing
-  build-depends:    base >= 4 && < 5,
+  build-depends:    ohloh-hs,
+                    base >= 4 && < 5,
                     data-lens,
                     hxt,
                     text-format-simple,
